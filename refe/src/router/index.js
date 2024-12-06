@@ -1,10 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import App from '../App.js'
 import Myelement from '../pages/myElement/index.js'
 import Hc from '../pages/hc/index.js'
 
-const head = '/refe'
-const router = createBrowserRouter([
+const head = ''
+const router = createHashRouter([
     {
         path: `${head}/`,
         Component: App,
@@ -19,4 +19,6 @@ const router = createBrowserRouter([
     }
 ])
 
+
+export { head }
 export default router

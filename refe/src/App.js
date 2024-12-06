@@ -2,7 +2,7 @@ import React from 'react'
 // import Type from './component/type/index'
 import './App.css';
 import { useNavigate } from 'react-router';
-
+import { head } from '../src/router/index'
 function App() {
   const content1 = 'Welcome Here!';
   const content2 = '个人学习网站 :)';
@@ -26,19 +26,19 @@ function App() {
         }
 
         <div className='head-navbar'>
-          <span onClick={() => navigate('/refe/hc')}>Html&Css</span>
+          <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>
           <span>Resume</span>
           <span>学习路线图</span>
           <span>Photo</span>
-          <span onClick={() => navigate('/refe/myelement')}>MyElement</span>
+          <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
         </div>
       </header>
       <div className='side-navbar'>
-        <span onClick={() => navigate('/refe/hc')}>Html&Css</span>
+        <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>
         <span>Resume</span>
         <span>学习路线图</span>
         <span>Photo</span>
-        <span onClick={() => navigate('/refe/myelement')}>MyElement</span>
+        <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
       </div>
       <div className='container'>
         {/* <Type content={content} /> */}

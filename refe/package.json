@@ -1,6 +1,7 @@
 {
   "name": "refe",
   "version": "0.1.0",
+  "homepage": "https://tzy168.github.io/refe",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
