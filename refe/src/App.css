@@ -1,38 +1,105 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap:wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+body{
+  background-color: rgb(3, 97, 134);
 }
 
-.App-link {
-  color: #61dafb;
+header span:hover{
+  background-color: rgba(201, 204, 206, 0.306);
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: rgba(2, 113, 150, 0.719);
+  height: 6.6vh;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+}
+header span,.side-navbar span{
+  margin-left: 16px;
+  color: aliceblue;
+  font-size: 18px;
+  padding: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:all .2s ease-in-out;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1{
+  color: aliceblue;
+  width: 100%;
+  display: block;
+}
+.container{
+  width: 76vw;
+  padding:6px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 4742292 */
+  src: url('//at.alicdn.com/t/c/font_4742292_q41111ccal8.woff2?t=1733488852134') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4742292_q41111ccal8.woff?t=1733488852134') format('woff'),
+       url('//at.alicdn.com/t/c/font_4742292_q41111ccal8.ttf?t=1733488852134') format('truetype');
+}
+
+.side-navbar{
+  position: fixed;
+  left: 0;
+  top: 6.6vh;
+  width: 100%;
+  display: flex;
+  background-color: rgb(3, 97, 134);
+  z-index: 100;
+  flex-direction: column;
+  opacity: 0;
+}
+.side-navbar-active{
+  opacity: 1;
+}
+.head-navbar{
+  display: flex;
+  flex-direction: row;
+}
+.bar{
+  font-family: "iconfont"!important;
+  transform: rotate(-90deg);
+  transition: all 0.3s ease-in-out;
+  margin-left: 10px;
+  color: aliceblue;
+  font-size: 18px;
+  padding: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.bar-active{
+  transform: rotate(0);
+}
+
+@media screen and (max-width: 600px) {
+  header .head-navbar span{
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .container{
+   visibility: hidden;
+  }
+  .bar{
+    visibility: visible;
   }
 }
+

@@ -1,0 +1,28 @@
+.text{
+    /* display: inline-block; */
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    padding: 2px;
+    text-decoration: underline;
+    -webkit-text-stroke:0px ;
+}
+.text::after{
+    content: "";
+    width: 3px;
+    height: 85%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.865);
+    animation: blink 0.8s linear infinite;
+    /* box-shadow: 3px 3px 4px rgb(255, 255, 255); */
+}
+    @keyframes blink{
+        0%,48%{
+        opacity: 0;
+        }
+        50%,100%{
+            opacity: 1;
+        }
+    }
