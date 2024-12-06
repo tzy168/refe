@@ -3,17 +3,18 @@ import App from '../App.js'
 import Myelement from '../pages/myElement/index.js'
 import Hc from '../pages/hc/index.js'
 
+const head = '/refe'
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: `${head}/`,
         Component: App,
     },
     {
-        path: '/myelement',
+        path: `${head}/myelement`,
         Component: Myelement,
     },
     {
-        path: '/hc',
+        path: `${head}/hc`,
         Component: Hc,
     }
 ])
