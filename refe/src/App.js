@@ -26,19 +26,19 @@ function App() {
         }
 
         <div className='head-navbar'>
-          <span onClick={() => navigate('/hc')}>Html&Css</span>
+          <span onClick={() => navigate('/refe/hc')}>Html&Css</span>
           <span>Resume</span>
           <span>学习路线图</span>
           <span>Photo</span>
-          <span onClick={() => navigate('/myelement')}>MyElement</span>
+          <span onClick={() => navigate('/refe/myelement')}>MyElement</span>
         </div>
       </header>
       <div className='side-navbar'>
-        <span onClick={() => navigate('/hc')}>Html&Css</span>
+        <span onClick={() => navigate('/refe/hc')}>Html&Css</span>
         <span>Resume</span>
         <span>学习路线图</span>
         <span>Photo</span>
-        <span onClick={() => navigate('/myelement')}>MyElement</span>
+        <span onClick={() => navigate('/refe/myelement')}>MyElement</span>
       </div>
       <div className='container'>
         {/* <Type content={content} /> */}
