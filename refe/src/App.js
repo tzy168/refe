@@ -1,5 +1,5 @@
 import React from 'react'
-// import Type from './component/type/index'
+import Type from './component/type/index'
 import './App.css';
 import { useNavigate } from 'react-router';
 import { head } from '../src/router/index'
@@ -20,17 +20,19 @@ function App() {
   return (
     <div className="App">
       <header>
-        {show ? <i className='bar' onClick={() => handleClick()}>&#xe620;</i>
-          :
-          <i className='bar' onClick={() => handleClick()}>&#xe601;</i>
-        }
-
         <div className='head-navbar'>
           <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>
           <span>Resume</span>
           <span>学习路线图</span>
           <span>Photo</span>
           <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
+        </div>
+
+        <div className='bar-btn'>
+          {show ? <i className='bar' onClick={() => handleClick()}>&#xe621;</i>
+            :
+            <i className='bar' onClick={() => handleClick()}>&#xe666;</i>
+          }
         </div>
       </header>
       <div className='side-navbar'>
@@ -41,7 +43,7 @@ function App() {
         <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
       </div>
       <div className='container'>
-        {/* <Type content={content} /> */}
+        <span className='type'><Type content={content} /></span>
       </div>
     </div>
   );

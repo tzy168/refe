@@ -23,6 +23,7 @@ header {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   width: 100%;
+  justify-content: space-between
 }
 header span,.side-navbar span{
   margin-left: 16px;
@@ -40,6 +41,7 @@ h1{
   width: 100%;
   display: block;
 }
+
 .container{
   width: 76vw;
   padding:6px;
@@ -52,9 +54,9 @@ h1{
 
 @font-face {
   font-family: 'iconfont';  /* Project id 4742292 */
-  src: url('//at.alicdn.com/t/c/font_4742292_q41111ccal8.woff2?t=1733488852134') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4742292_q41111ccal8.woff?t=1733488852134') format('woff'),
-       url('//at.alicdn.com/t/c/font_4742292_q41111ccal8.ttf?t=1733488852134') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff2?t=1733543192760') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff?t=1733543192760') format('woff'),
+       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.ttf?t=1733543192760') format('truetype');
 }
 
 .side-navbar{
@@ -64,9 +66,10 @@ h1{
   width: 100%;
   display: flex;
   background-color: rgb(3, 97, 134);
-  z-index: 100;
+  /* z-index: 100; */
   flex-direction: column;
   opacity: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .side-navbar-active{
   opacity: 1;
@@ -77,25 +80,25 @@ h1{
 }
 .bar{
   font-family: "iconfont"!important;
-  transform: rotate(-90deg);
+  /* transform: rotate(-90deg); */
   transition: all 0.3s ease-in-out;
-  margin-left: 10px;
+  margin: 10px;
   color: aliceblue;
   font-size: 18px;
-  padding: 3px;
+  padding: 5px;
   border-radius: 4px;
   cursor: pointer;
   visibility: hidden;
 }
-.bar-active{
+/* .bar-active{
   transform: rotate(0);
-}
+} */
 
 @media screen and (max-width: 600px) {
   header .head-navbar span{
     display: none;
   }
-  .container{
+  .type{
    visibility: hidden;
   }
   .bar{
