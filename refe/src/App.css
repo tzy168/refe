@@ -5,8 +5,9 @@
 .App {
   display: flex;
   flex-wrap:wrap;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 body{
   background-color: rgb(3, 97, 134);
@@ -15,6 +16,9 @@ body{
 header span:hover{
   background-color: rgba(201, 204, 206, 0.306);
 }
+/* div{
+  border: 1px solid #000;
+} */
 header {
   display: flex;
   align-items: center;
@@ -22,7 +26,7 @@ header {
   height: 6.6vh;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  width: 100%;
+  /* width: 100vw; */
   justify-content: space-between
 }
 header span,.side-navbar span{
@@ -51,7 +55,9 @@ h1{
   justify-content: center;
   align-items: center;
 }
-
+.container span{
+  display: inline-block;
+}
 @font-face {
   font-family: 'iconfont';  /* Project id 4742292 */
   src: url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff2?t=1733543192760') format('woff2'),
@@ -62,7 +68,7 @@ h1{
 .side-navbar{
   position: fixed;
   left: 0;
-  top: 7vh;
+  top: 6.6vh;
   width: 100%;
   display: flex;
   background-color: rgb(3, 97, 134);
@@ -93,13 +99,18 @@ h1{
 
 @media screen and (max-width: 600px) {
   header .head-navbar span{
-    display: none;
+    visibility: hidden;
   }
-  .type{
+  /* .type{
    visibility: hidden;
-  }
+  } */
   .bar{
     visibility: visible;
   }
 }
 
+.bar-btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

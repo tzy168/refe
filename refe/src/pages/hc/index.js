@@ -1,10 +1,12 @@
+import React from 'react';
+import './index.css';
+
 const Hc = () => {
     return (
-        <div>
-            <h1>Html & Css</h1>
-
-        </div>
-    )
+        <div className='main'>
+            <h1>HTML&CSS</h1>
+        </div >
+    );
 }
 
-export default Hc
+export default Hc;

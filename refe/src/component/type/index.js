@@ -8,19 +8,20 @@ const Type = ({ content }) => {
         const text = content[Math.floor(Math.random() * content.length)];
         const speed = 100;
         let index = 0;
-
-        console.log(typeRef.current);
+        let timer;
         const type = () => {
-            if (index < text.length) {
-                setText(text.substring(0, index + 1));
-                index++;
-                setTimeout(type, speed);
-            }
-        };
-
+            timer = setInterval(() => {
+                if (index < text.length) {
+                    setText(text.slice(0, index + 1));
+                    index++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, speed);
+        }
         type();
         return () => {
-            clearInterval(type);
+            clearInterval(timer);
         };
     }, [content]);
 

@@ -1,13 +1,13 @@
 import React from 'react'
-import Type from './component/type/index'
+import { Type, BtnChange } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
 import { head } from '../src/router/index'
 function App() {
-  const content1 = 'Welcome Here! ';
-  const content2 = '个人学习网站 :) ';
-  const content3 = 'I am a web developer.';
-  const content4 = 'Hello World! :) ';
+  const content1 = 'This is Welcome Here! ';
+  const content2 = 'This is personal Web :) ';
+  const content3 = 'This is a web developer.';
+  const content4 = 'This is Hello World! :) ';
   const content5 = 'This is REFE :)';
   const content = [content1, content2, content3, content4, content5];
   const [show, setShow] = React.useState(false)
@@ -29,6 +29,7 @@ function App() {
         </div>
 
         <div className='bar-btn'>
+          {/* <BtnChange /> */}
           {show ? <i className='bar' onClick={() => handleClick()}>&#xe621;</i>
             :
             <i className='bar' onClick={() => handleClick()}>&#xe666;</i>
@@ -43,7 +44,9 @@ function App() {
         <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
       </div>
       <div className='container'>
-        <span className='type'><Type content={content} /></span>
+        <span className='type'>
+          <Type content={content} />
+        </span>
       </div>
     </div>
   );
