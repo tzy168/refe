@@ -53,6 +53,9 @@ header span,.side-navbar span{
   background-image: url(./asstes/images/logo.png);
   background-size: contain;
 }
+.logo:hover{
+  background-color: transparent
+}
 .side-navbar span{
   font-size: 1.3rem;
 }
@@ -106,7 +109,7 @@ h1{
   padding: 2px;
   border-radius: 4px;
   cursor: pointer;
-  /* visibility: hidden; */
+  visibility: hidden;
   flex:1;
 }
 
