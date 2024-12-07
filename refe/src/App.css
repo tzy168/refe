@@ -62,7 +62,7 @@ h1{
 .side-navbar{
   position: fixed;
   left: 0;
-  top: 6.6vh;
+  top: 7vh;
   width: 100%;
   display: flex;
   background-color: rgb(3, 97, 134);
@@ -80,7 +80,6 @@ h1{
 }
 .bar{
   font-family: "iconfont"!important;
-  /* transform: rotate(-90deg); */
   transition: all 0.3s ease-in-out;
   margin: 10px;
   color: aliceblue;
@@ -90,9 +89,7 @@ h1{
   cursor: pointer;
   visibility: hidden;
 }
-/* .bar-active{
-  transform: rotate(0);
-} */
+
 
 @media screen and (max-width: 600px) {
   header .head-navbar span{

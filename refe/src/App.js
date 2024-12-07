@@ -4,16 +4,16 @@ import './App.css';
 import { useNavigate } from 'react-router';
 import { head } from '../src/router/index'
 function App() {
-  const content1 = 'Welcome Here!';
-  const content2 = '个人学习网站 :)';
+  const content1 = 'Welcome Here! ';
+  const content2 = '个人学习网站 :) ';
   const content3 = 'I am a web developer.';
-  const content4 = 'Hello World! :)';
-  const content = [content1, content2, content3, content4];
+  const content4 = 'Hello World! :) ';
+  const content5 = 'This is REFE :)';
+  const content = [content1, content2, content3, content4, content5];
   const [show, setShow] = React.useState(false)
   let navigate = useNavigate()
 
   const handleClick = () => {
-    document.querySelector('.bar').classList.toggle('bar-active')
     document.querySelector('.side-navbar').classList.toggle('side-navbar-active')
     setShow(!show)
   }
