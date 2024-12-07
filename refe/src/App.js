@@ -3,6 +3,7 @@ import { Type, BtnChange } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
 import { head } from '../src/router/index'
+import logo from './asstes/images/logo.png'
 function App() {
   const content1 = 'This is Welcome Here! ';
   const content2 = 'This is personal Web :) ';
@@ -20,14 +21,16 @@ function App() {
   return (
     <div className="App">
       <header>
+        <span className='logo'></span>
         <div className='head-navbar'>
+          {/* <span>@REFE</span> */}
+
           <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>
           <span>Resume</span>
-          <span>学习路线图</span>
+          {/* <span>学习路线图</span> */}
           <span>Photo</span>
           <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
         </div>
-
         <div className='bar-btn'>
           {/* <BtnChange /> */}
           {show ? <i className='bar' onClick={() => handleClick()}>&#xe621;</i>
@@ -35,6 +38,7 @@ function App() {
             <i className='bar' onClick={() => handleClick()}>&#xe666;</i>
           }
         </div>
+
       </header>
       <div className='side-navbar'>
         <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>

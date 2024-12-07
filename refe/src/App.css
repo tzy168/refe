@@ -8,38 +8,54 @@
   height: 100vh;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100vw;
 }
 body{
   background-color: rgb(3, 97, 134);
 }
 
-header span:hover{
-  background-color: rgba(201, 204, 206, 0.306);
-}
-/* div{
-  border: 1px solid #000;
-} */
 header {
   display: flex;
   align-items: center;
   background-color: rgba(2, 113, 150, 0.719);
-  height: 6.6vh;
+  height: 6vh;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  /* width: 100vw; */
+  width: 100vw;
   justify-content: space-between
 }
+header span:hover{
+  background-color: rgba(201, 204, 206, 0.306);
+}
+.head-navbar{
+  display: flex;
+  flex:1;
+  align-items: center;
+  /* flex-direction: row; */
+}
+
 header span,.side-navbar span{
+  /* display: block; */
   margin-left: 16px;
   color: aliceblue;
-  font-size: 18px;
+  font-size: 1.1rem;
   padding: 3px;
   border-radius: 4px;
   cursor: pointer;
   transition:all .2s ease-in-out;
   font-weight: bold;
 }
-
+.logo{
+  width: 10vh;
+  height: 1vh;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-image: url(./asstes/images/logo.png);
+  background-size: contain;
+}
+.side-navbar span{
+  font-size: 1.3rem;
+}
 h1{
   color: aliceblue;
   width: 100%;
@@ -66,7 +82,7 @@ h1{
 }
 
 .side-navbar{
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 6.6vh;
   width: 100%;
@@ -74,32 +90,33 @@ h1{
   background-color: rgb(3, 97, 134);
   /* z-index: 100; */
   flex-direction: column;
-  opacity: 0;
+  visibility: hidden;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .side-navbar-active{
-  opacity: 1;
+  visibility: visible;
 }
-.head-navbar{
-  display: flex;
-  flex-direction: row;
-}
+
 .bar{
   font-family: "iconfont"!important;
   transition: all 0.3s ease-in-out;
-  margin: 10px;
+  margin: 5px;
   color: aliceblue;
   font-size: 18px;
-  padding: 5px;
+  padding: 2px;
   border-radius: 4px;
   cursor: pointer;
-  visibility: hidden;
+  /* visibility: hidden; */
+  flex:1;
 }
 
 
 @media screen and (max-width: 600px) {
   header .head-navbar span{
-    visibility: hidden;
+    display: none;
+  }
+  header span,.side-navbar span{
+    font-size: 0.63rem;
   }
   /* .type{
    visibility: hidden;
