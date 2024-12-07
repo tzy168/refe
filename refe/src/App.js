@@ -23,8 +23,7 @@ function App() {
       <header>
         <span className='logo'></span>
         <div className='head-navbar'>
-          {/* <span>@REFE</span> */}
-
+          <span>@REFE</span>
           <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>
           <span>Resume</span>
           {/* <span>学习路线图</span> */}
@@ -47,11 +46,11 @@ function App() {
         <span>Photo</span>
         <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
       </div>
-      <div className='container'>
+      {!show && <div className='container'>
         <span className='type'>
           <Type content={content} />
         </span>
-      </div>
+      </div>}
     </div>
   );
 }

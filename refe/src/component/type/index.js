@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './type.css';
 
 const Type = ({ content }) => {
-    const typeRef = useRef();
     const [text, setText] = useState('');
     useEffect(() => {
         const text = content[Math.floor(Math.random() * content.length)];
@@ -19,16 +18,21 @@ const Type = ({ content }) => {
                 }
             }, speed);
         }
-        type();
+
+        setTimeout(() => {
+            type();
+        }, 800);
+
         return () => {
             clearInterval(timer);
+            setText('');
         };
     }, [content]);
 
     return (
         <div>
             <input className="text" autoFocus={true}
-                ref={typeRef} value={text}></input>
+                value={text} onChange={() => { }}></input>
         </div>
     );
 };
