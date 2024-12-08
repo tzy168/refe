@@ -1,5 +1,5 @@
 import React from 'react'
-import { Type, BtnChange } from './component/index'
+// import { Type, BtnChange } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
 import { head } from '../src/router/index'
@@ -48,7 +48,7 @@ function App() {
       </div>
       {!show && <div className='container'>
         <span className='type'>
-          <Type content={content} />
+          {/* <Type content={content} /> */}
         </span>
       </div>}
     </div>

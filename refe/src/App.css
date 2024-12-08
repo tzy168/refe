@@ -94,13 +94,12 @@ h1{
   background-color: rgb(3, 97, 134);
   /* z-index: 100; */
   flex-direction: column;
-  visibility: hidden;
+  display: none;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .side-navbar-active{
-  visibility: visible;
+  display: flex;
 }
-
 .bar{
   font-family: "iconfont"!important;
   transition: all 0.3s ease-in-out;
