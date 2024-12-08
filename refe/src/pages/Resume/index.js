@@ -41,7 +41,7 @@ const Resume = () => {
                 <h2 >项目经历</h2>
                 <div style={{ marginBottom: '10px' }}>
                     <p>
-                        <a href='https://github.com/tzy168/BMS'>
+                        <a href='https://github.com/tzy168/BMS' target='blank'>
                             <strong> 通用后台管理系统 </strong>
                         </a>2022.08 - 2022.09
                     </p>

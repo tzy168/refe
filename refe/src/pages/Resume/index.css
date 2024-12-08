@@ -31,6 +31,7 @@ hr{
     height: 13.2vh;
     background-image: url(../../asstes/images/head.jpg);
     background-size: cover;
+    border-radius: 5%;
 }
 a{
     text-decoration: none;
