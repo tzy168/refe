@@ -112,6 +112,7 @@ h1{
   cursor: pointer;
   visibility: hidden;
   flex:1;
+  margin-bottom:12px;
 }
 
 
