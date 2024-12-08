@@ -2,7 +2,7 @@ import React from 'react'
 // import { Type, BtnChange } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
-import { head } from '../src/router/index'
+// import { head } from '../src/router/index'
 import logo from './asstes/images/logo.png'
 function App() {
   const content1 = 'This is Welcome Here! ';
@@ -24,11 +24,10 @@ function App() {
         <span className='logo'></span>
         <div className='head-navbar'>
           <span>@REFE</span>
-          <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>
-          <span>Resume</span>
-          {/* <span>学习路线图</span> */}
+          <span onClick={() => navigate(`/hc`)}>Html&Css</span>
+          <span onClick={() => navigate(`/resume`)}>Resume</span>
           <span>Photo</span>
-          <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
+          <span onClick={() => navigate(`/myelement`)}>MyElement</span>
         </div>
         <div className='bar-btn'>
           {/* <BtnChange /> */}
@@ -40,11 +39,11 @@ function App() {
 
       </header>
       <div className='side-navbar'>
-        <span onClick={() => navigate(`${head}/hc`)}>Html&Css</span>
-        <span>Resume</span>
+        <span onClick={() => navigate(`/hc`)}>Html&Css</span>
+        <span onClick={() => navigate(`/resume`)}>Resume</span>
         <span>学习路线图</span>
         <span>Photo</span>
-        <span onClick={() => navigate(`${head}/myelement`)}>MyElement</span>
+        <span onClick={() => navigate(`/myelement`)}>MyElement</span>
       </div>
       {!show && <div className='container'>
         <span className='type'>
