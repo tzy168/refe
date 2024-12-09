@@ -1,9 +1,10 @@
-import React from 'react'
-// import { Type, BtnChange } from './component/index'
+import React, { useState } from 'react'
+import { Type, BtnChange } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
 // import { head } from '../src/router/index'
 import logo from './asstes/images/logo.png'
+import MyEcharts from './utils/echarts';
 function App() {
   const content1 = 'This is Welcome Here! ';
   const content2 = 'This is personal Web :) ';
@@ -18,6 +19,9 @@ function App() {
     document.querySelector('.side-navbar').classList.toggle('side-navbar-active')
     setShow(!show)
   }
+
+  const [value, setValue] = useState(75)
+
   return (
     <div className="App">
       <header>
@@ -45,12 +49,43 @@ function App() {
         <span>Photo</span>
         <span onClick={() => navigate(`/myelement`)}>MyElement</span>
       </div>
-      {!show && <div className='container'>
+      <div className='container'>
         <span className='type'>
-          {/* <Type content={content} /> */}
+          <Type content={content} />
         </span>
-      </div>}
-    </div>
+
+        <div className='skill-box'>
+          <div className='skill-card c1'>
+            <span style={{ flex: 1 }}>JavaScript</span>
+            <span style={{ flex: 1 }}>{value}%</span>
+            <div>
+              <input type='range'
+                value={value}
+                style={{ width: '15vw' }} onChange={(e) => { setValue(e.target.value) }} />
+            </div>
+          </div>
+          <div className='skill-card c2'>
+            <span style={{ flex: 1 }}>React</span>
+            <span style={{ flex: 1 }}>{value}%</span>
+            <div>
+              <input type='range'
+                value={value}
+                style={{ width: '15vw' }} onChange={(e) => { setValue(e.target.value) }} />
+            </div>
+          </div>
+          <div className='skill-card c3'>
+            <span style={{ flex: 1 }}>{value}%</span>
+            <span style={{ flex: 1 }}>Css</span>
+            <div>
+              <input type='range'
+                value={value}
+                style={{ width: '15vw' }} onChange={(e) => { setValue(e.target.value) }} />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div >
   );
 }
 

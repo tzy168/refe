@@ -69,11 +69,14 @@ h1{
 .container{
   width: 76vw;
   padding:6px;
-  margin: 0 auto;
+  margin: 10px auto;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(240, 255, 255, 0.326);
+  border-radius: 10px;
 }
 .container span{
   display: inline-block;
@@ -135,3 +138,44 @@ h1{
   justify-content: flex-end;
   align-items: center;
 }
+
+.skill-box{
+  width: 100%;
+  display: flex;
+  justify-content:space-evenly;
+  /* border: 1px solid; */
+}
+.skill-card{
+  font-size: 30px;
+  color: aliceblue;
+  display: 'flex';
+  flex-direction: 'column';
+  flex-wrap: 'wrap';
+  margin: 10px;
+  width: 20vw;
+  height: 30vw;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: skyblue;
+  overflow: hidden;
+  transition: all 0.2s linear;
+  span{
+    display: block;
+    transition: all 0.2s linear;
+    flex: 1;
+  }
+  input{
+    margin: 0;
+  }
+  div{
+    flex: 1;
+  }
+}
+.skill-card:hover{
+  box-shadow: 0 0 20px deepskyblue;
+  span{
+    transform: scale(1.1);
+  }
+}
+  

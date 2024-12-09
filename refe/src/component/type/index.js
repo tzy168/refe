@@ -18,11 +18,7 @@ const Type = ({ content }) => {
                 }
             }, speed);
         }
-
-        setTimeout(() => {
-            type();
-        }, 800);
-
+        type();
         return () => {
             clearInterval(timer);
             setText('');
