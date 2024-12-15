@@ -4,11 +4,11 @@
 }
 .App {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   height: 100vh;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100vw;
+  width: 98vw;
 }
 body{
   background-color: rgb(3, 97, 134);
@@ -18,15 +18,13 @@ header {
   display: flex;
   align-items: flex-end;
   background-color: rgba(2, 113, 150, 0.719);
-  height: 6vh;
+  height: 6.6vh;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  width: 100vw;
+  width: 100%;
   justify-content: space-between
 }
-header span:hover{
-  background-color: rgba(201, 204, 206, 0.306);
-}
+
 .head-navbar{
   display: flex;
   flex:1;
@@ -35,16 +33,19 @@ header span:hover{
 }
 
 header span,.side-navbar span{
-  /* display: block; */
-  margin-left: 16px;
+  display: block;
+  margin-left: 12px;
   margin-bottom: 10px;
   color: aliceblue;
   font-size: 1.1rem;
-  padding: 3px;
+  /* padding: 3px; */
   border-radius: 4px;
   cursor: pointer;
   transition:all .2s ease-in-out;
   font-weight: bold;
+}
+header span:hover{
+  background-color: rgba(201, 204, 206, 0.306);
 }
 .logo{
   width: 10vh;
@@ -71,7 +72,7 @@ h1{
   padding:6px;
   margin: 10px auto;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -99,6 +100,7 @@ h1{
   flex-direction: column;
   display: none;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  z-index: 999;
 }
 .side-navbar-active{
   display: flex;
@@ -139,43 +141,4 @@ h1{
   align-items: center;
 }
 
-.skill-box{
-  width: 100%;
-  display: flex;
-  justify-content:space-evenly;
-  /* border: 1px solid; */
-}
-.skill-card{
-  font-size: 30px;
-  color: aliceblue;
-  display: 'flex';
-  flex-direction: 'column';
-  flex-wrap: 'wrap';
-  margin: 10px;
-  width: 20vw;
-  height: 30vw;
-  text-align: center;
-  border-radius: 10px;
-  padding: 5px;
-  background-color: skyblue;
-  overflow: hidden;
-  transition: all 0.2s linear;
-  span{
-    display: block;
-    transition: all 0.2s linear;
-    flex: 1;
-  }
-  input{
-    margin: 0;
-  }
-  div{
-    flex: 1;
-  }
-}
-.skill-card:hover{
-  box-shadow: 0 0 20px deepskyblue;
-  span{
-    transform: scale(1.1);
-  }
-}
   

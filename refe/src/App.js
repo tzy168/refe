@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Type, BtnChange } from './component/index'
+import React from 'react'
+import { Type, Skillcard } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
 // import { head } from '../src/router/index'
-import logo from './asstes/images/logo.png'
-import MyEcharts from './utils/echarts';
+// import logo from './asstes/images/logo.png'
+// import MyEcharts from './utils/echarts';
 function App() {
   const content1 = 'This is Welcome Here! ';
   const content2 = 'This is personal Web :) ';
@@ -12,6 +12,7 @@ function App() {
   const content4 = 'This is Hello World! :) ';
   const content5 = 'This is REFE :)';
   const content = [content1, content2, content3, content4, content5];
+
   const [show, setShow] = React.useState(false)
   let navigate = useNavigate()
 
@@ -20,7 +21,6 @@ function App() {
     setShow(!show)
   }
 
-  const [value, setValue] = useState(75)
 
   return (
     <div className="App">
@@ -55,35 +55,8 @@ function App() {
         </span>
 
         <div className='skill-box'>
-          <div className='skill-card c1'>
-            <span style={{ flex: 1 }}>JavaScript</span>
-            <span style={{ flex: 1 }}>{value}%</span>
-            <div>
-              <input type='range'
-                value={value}
-                style={{ width: '15vw' }} onChange={(e) => { setValue(e.target.value) }} />
-            </div>
-          </div>
-          <div className='skill-card c2'>
-            <span style={{ flex: 1 }}>React</span>
-            <span style={{ flex: 1 }}>{value}%</span>
-            <div>
-              <input type='range'
-                value={value}
-                style={{ width: '15vw' }} onChange={(e) => { setValue(e.target.value) }} />
-            </div>
-          </div>
-          <div className='skill-card c3'>
-            <span style={{ flex: 1 }}>{value}%</span>
-            <span style={{ flex: 1 }}>Css</span>
-            <div>
-              <input type='range'
-                value={value}
-                style={{ width: '15vw' }} onChange={(e) => { setValue(e.target.value) }} />
-            </div>
-          </div>
+          <Skillcard />
         </div>
-
       </div>
     </div >
   );

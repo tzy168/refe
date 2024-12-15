@@ -1,0 +1,21 @@
+.range{
+    display: block;
+    height: 30px;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    position: relative;
+  }
+.inner{
+    font-size: 25px;
+    display: block;
+    height: 30px;
+    width: 75%;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    background-color:rgb(28, 56, 126);
+    top: 0;
+    text-align: right;
+    /* padding-left: 10px; */
+  }

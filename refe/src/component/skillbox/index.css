@@ -1,0 +1,35 @@
+.skill-box{
+    width : 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+  }
+  .skill-card{
+    font-size: 30px;
+    color: aliceblue;
+    /* display: 'flex'; */
+    /* flex-direction: 'column'; */
+    /* flex-wrap: 'wrap'; */
+    /* justify-content: space-between; */
+    margin: 10px;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: skyblue;
+    overflow: hidden;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    span{
+      /* display: block; */
+      transition: all 0.2s linear;
+      /* flex: 1; */
+    }
+  }
+  .skill-card:hover{
+    box-shadow: 0 0 20px deepskyblue;
+    span{
+      transform: scale(1.05);
+    }
+  }

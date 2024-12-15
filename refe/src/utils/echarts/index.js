@@ -18,7 +18,7 @@ var _outerRadius = 200;
 var _innerRadius = 170;
 var _pointerInnerRadius = 40;
 var _insidePanelRadius = 140;
-var _currentDataIndex = 0;
+// var _currentDataIndex = 0;
 function renderItem(params, api) {
     var valOnRadian = api.value(1);
     var coords = api.coord([api.value(0), valOnRadian]);
