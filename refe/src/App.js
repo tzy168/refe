@@ -1,10 +1,9 @@
-import React from 'react'
-import { Type, Skillcard } from './component/index'
+import React, { useEffect } from 'react'
+import { Type, Skillcard, Timer } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
-// import { head } from '../src/router/index'
-// import logo from './asstes/images/logo.png'
-// import MyEcharts from './utils/echarts';
+import { getHistoryToday } from './apis/historyToday'
+import TodayHistory from './component/todayHistory';
 function App() {
   const content1 = 'This is Welcome Here! ';
   const content2 = 'This is personal Web :) ';
@@ -21,20 +20,28 @@ function App() {
     setShow(!show)
   }
 
+  const handleGetHistoryToday = () => {
+    getHistoryToday({ type: 0 }).then(res => {
+      console.log(res)
+    })
+  }
 
+  const date = new Date().toString().split(' ')
+  const dateymd = new Date().toLocaleDateString()
+  const weekday = date[0]
+  const time = date[4]
   return (
     <div className="App">
       <header>
-        <span className='logo'></span>
+        <span><strong>@REFE</strong></span>
         <div className='head-navbar'>
-          <span>@REFE</span>
+
           <span onClick={() => navigate(`/hc`)}>Html&Css</span>
           <span onClick={() => navigate(`/resume`)}>Resume</span>
           <span>Photo</span>
           <span onClick={() => navigate(`/myelement`)}>MyElement</span>
         </div>
         <div className='bar-btn'>
-          {/* <BtnChange /> */}
           {show ? <i className='bar' onClick={() => handleClick()}>&#xe621;</i>
             :
             <i className='bar' onClick={() => handleClick()}>&#xe666;</i>
@@ -50,6 +57,8 @@ function App() {
         <span onClick={() => navigate(`/myelement`)}>MyElement</span>
       </div>
       <div className='container'>
+        <Timer />
+        <TodayHistory />
         <span className='type'>
           <Type content={content} />
         </span>

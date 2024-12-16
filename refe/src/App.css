@@ -1,76 +1,79 @@
-*{
+/* 全局重置样式 */
+* {
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: rgb(3, 97, 134);
+  overflow-x: hidden;
+}
+
+/* 自定义字体 */
+@font-face {
+  font-family: 'iconfont'; /* Project id 4742292 */
+  src: url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff2?t=1733543192760') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff?t=1733543192760') format('woff'),
+       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.ttf?t=1733543192760') format('truetype');
+}
+
+/* App 主体样式 */
 .App {
   display: flex;
-  flex-wrap:nowrap;
+  flex-wrap: nowrap;
   height: 100vh;
   flex-direction: column;
   justify-content: flex-start;
-  width: 98vw;
-}
-body{
-  background-color: rgb(3, 97, 134);
+  align-items: center;
+  width: 100vw;
 }
 
+/* Header 样式 */
 header {
   display: flex;
-  align-items: flex-end;
-  background-color: rgba(2, 113, 150, 0.719);
-  height: 6.6vh;
+  align-items: center;
+  background-color: rgb(2, 113, 150);
+  height: 6vh;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  justify-content: space-between;
   width: 100%;
-  justify-content: space-between
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-
-.head-navbar{
+.head-navbar {
   display: flex;
-  flex:1;
+  flex: 15;
+  flex-direction: row;
   align-items: center;
-  /* flex-direction: row; */
 }
-
-header span,.side-navbar span{
+header span,.side-navbar span {
   display: block;
   margin-left: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
   color: aliceblue;
-  font-size: 1.1rem;
-  /* padding: 3px; */
-  border-radius: 4px;
+  font-size: 1.4rem;
   cursor: pointer;
-  transition:all .2s ease-in-out;
-  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.2s ease-in-out;
 }
-header span:hover{
+header span:hover {
   background-color: rgba(201, 204, 206, 0.306);
 }
-.logo{
+.logo {
   width: 10vh;
   height: 1vh;
   padding: 10px;
-  background-repeat: no-repeat;
   background-image: url(./asstes/images/logo.png);
+  background-repeat: no-repeat;
   background-size: contain;
-}
-.logo:hover{
-  background-color: transparent
-}
-.side-navbar span{
-  font-size: 1.3rem;
-}
-h1{
-  color: aliceblue;
-  width: 100%;
-  display: block;
+  flex: 2;
 }
 
-.container{
+/* 容器样式 */
+.container {
   width: 76vw;
-  padding:6px;
-  margin: 10px auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -78,34 +81,36 @@ h1{
   align-items: center;
   background-color: rgba(240, 255, 255, 0.326);
   border-radius: 10px;
+  margin-top: 7vh;
 }
-.container span{
+.container span {
   display: inline-block;
 }
-@font-face {
-  font-family: 'iconfont';  /* Project id 4742292 */
-  src: url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff2?t=1733543192760') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff?t=1733543192760') format('woff'),
-       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.ttf?t=1733543192760') format('truetype');
-}
 
-.side-navbar{
+/* 侧边导航栏样式 */
+.side-navbar {
   position: absolute;
   left: 0;
-  top: 6.6vh;
-  width: 100%;
-  display: flex;
+  top: 6vh;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
   background-color: rgb(3, 97, 134);
-  /* z-index: 100; */
+  position: fixed;
   flex-direction: column;
-  display: none;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.2s ease-in-out;
   z-index: 999;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.side-navbar-active{
-  display: flex;
+.side-navbar-active {
+  opacity: 1;
+  transform: translateX(0);
 }
-.bar{
+
+/* 图标字体样式 */
+.bar {
   font-family: "iconfont"!important;
   transition: all 0.3s ease-in-out;
   margin: 5px;
@@ -114,31 +119,29 @@ h1{
   padding: 2px;
   border-radius: 4px;
   cursor: pointer;
-  visibility: hidden;
-  flex:1;
-  margin-bottom:12px;
+  display: none;
+  margin-bottom: 12px;
 }
 
-
+/* 响应式样式 */
 @media screen and (max-width: 600px) {
-  header .head-navbar span{
+  header .head-navbar span {
     display: none;
   }
-  header span,.side-navbar span{
+  header span,
+  .side-navbar span {
     font-size: 1.2rem;
   }
-  /* .type{
-   visibility: hidden;
-  } */
-  .bar{
-    visibility: visible;
+  .bar {
+    display: block;
+  }
+  .logo {
+    flex: 4;
   }
 }
 
-.bar-btn{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.now-date{
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 10px;
 }
-
-  
