@@ -1,8 +1,17 @@
-.skill-box{
+  @keyframes show{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  .skill-box{
     width : 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;
+    animation: show 1s linear;
   }
   .skill-card{
     font-size: 30px;
@@ -13,7 +22,7 @@
     text-align: center;
     border-radius: 10px;
     padding: 5px;
-    background-color: skyblue;
+    background-color: rgba(135, 207, 235, 0.434);
     overflow: hidden;
     transition: all 0.2s linear;
     cursor: pointer;
@@ -27,3 +36,4 @@
       transform: scale(1.05);
     }
   }
+

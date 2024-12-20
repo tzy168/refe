@@ -4,7 +4,7 @@
   padding: 0;
 }
 body {
-  background-color: rgb(3, 97, 134);
+  /* background-color: rgb(3, 97, 134); */
   overflow-x: hidden;
 }
 
@@ -31,7 +31,8 @@ body {
 header {
   display: flex;
   align-items: center;
-  background-color: rgb(2, 113, 150);
+  background-color: rgba(255, 255, 255, 0.813);
+  border: 1px solid #ccc;
   height: 6vh;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -41,6 +42,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  /*blur */
+  backdrop-filter: blur(10px);
 }
 .head-navbar {
   display: flex;
@@ -52,11 +55,12 @@ header span,.side-navbar span {
   display: block;
   margin-left: 12px;
   margin-bottom: 10px; 
-  color: aliceblue;
+  color: rgba(48, 46, 46, 0.758);
   font-size: 1.4rem;
   cursor: pointer;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.2s ease-in-out;
+  border-radius: 5px;
 }
 header span:hover {
   background-color: rgba(201, 204, 206, 0.306);
@@ -73,13 +77,13 @@ header span:hover {
 
 /* 容器样式 */
 .container {
-  width: 76vw;
+  width: 80vw;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(240, 255, 255, 0.326);
+  /* background-color: rgba(240, 255, 255, 0.326); */
   border-radius: 10px;
   margin-top: 7vh;
 }

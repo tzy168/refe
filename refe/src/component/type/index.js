@@ -26,7 +26,8 @@ const Type = ({ content }) => {
     }, [content]);
 
     return (
-        <div>
+        <div className='type-box'>
+            @refe：
             <input className="text" autoFocus={true}
                 value={text} onChange={() => { }}></input>
         </div>

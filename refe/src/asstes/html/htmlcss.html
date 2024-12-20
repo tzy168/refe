@@ -1,0 +1,3136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html&css</title>
+    <!-- <link rel="stylesheet" href="./01_css.css"> -->
+    <script src="//at.alicdn.com/t/c/font_4736811_y71luey7egp.js"></script>
+    <script src="//at.alicdn.com/t/c/font_4736811_41lpygxvg6p.js"></script>
+</head>
+<style>
+
+    body{
+        background:linear-gradient(90deg, #a6e0f4 0%, #f9a4cf 100%);
+        /* background: #000; */
+        font-size: 100%;
+        border: 1px solid;
+        display: flex;
+        transition: 0.8s all linear;
+    }   
+    body::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        }
+
+    .fixed-element{
+        position: fixed;
+        border-radius: 10%;
+        top: 20px;
+        left: 10px;
+        width: 22vw;
+        background: linear-gradient(#b7dbe7 0%, #f3b4d4 100%);
+    }
+    .container {
+        width: 70vw;
+        border: #aaaaaa 1px solid;
+        background-color:transparent;
+        margin-left: auto;
+        overflow: hidden;
+    }
+
+
+    .switch{
+        height: 5.8vw;
+        width: 11.6vw;
+        appearance: none;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5.8vw;
+        border: 0.2vw solid black;
+        position: relative;
+        transition:all 0.8s linear;
+    }
+    .switch::before {
+        content: "";
+        height: 5vw;
+        width: 5vw;
+        margin: 0.25vw;
+        box-shadow: 2px 2px 0.4vw black;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+        background: url(https://img.picui.cn/free/2024/11/07/672cb51cf0862.jpg);
+        background-size:cover;
+    }
+   .switch:checked::before{
+        left: 6vw;
+        background: #ffffff;
+        background: url(https://img.picui.cn/free/2024/10/15/670e538e39721.jpg);
+        background-size:cover;
+    }
+    button{
+        background: linear-gradient(deepskyblue,green);
+        /* border: none; */
+        border-radius: 10px;
+        width: 4vw;
+        margin: 5px;
+    }
+    fieldset{
+        border-radius: 5px;
+        max-width: 90%;
+        margin: 30px auto;
+        font-size: 18px;
+        border: 1px solid #0b0000;
+        border-radius: 10px;
+        padding: 0;
+    }
+    li{
+        font-size: 18px;
+        color: brown;
+    }
+    table{
+        border: black 1px solid;
+        margin-top: 8px;
+        border-radius: 5px;
+        border-collapse: collapse;
+    }
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #888;
+        background: linear-gradient(#b7dbe7 0%, #f3b4d4 100%);
+        height: 80px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px skyblue;
+        /* float: right; */
+    }
+    input{
+        width: 50%;
+    }
+    video{
+        width: 20%;
+        height: 20%;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    .shadow{
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        position: relative;
+        top: 0;
+        transition: 0.5s linear all;
+
+    }
+   .shadow:hover{
+        /* background-color: red; */
+        box-shadow: 0px 0px 50px rgb(243, 3, 39) inset;/* 阴影: 水平 垂直 虚化 外延 颜色 内阴影*/
+        top:-2px
+    }
+
+    .opacity{
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        opacity: 0;
+        transition: 0.5s linear all;
+    }
+    .opacity:hover{
+        opacity: 1;
+    }
+
+
+    .radius{
+        width: 10vw;
+        height:10vw;
+        border: 2px solid;
+        border-radius: 0%; 
+        margin: 5px;
+        transition: 1s linear all;
+    }
+    .radius:hover{
+        border-radius: 50%;
+    }
+
+    .text-shadow{
+        font-size: 30px;
+        transition: 0.5s linear all;
+    }
+    .text-shadow:hover{
+        text-shadow: 2px 2px 4px blueviolet;
+    }
+
+    .ulli{
+        width: 10vw; 
+        height: 10vw;
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        border: 2px solid black;
+        padding-left: 0;
+    }
+    .ulli li{
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+    }
+
+    .myCanvas{
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        margin: 0 auto;
+        transition: 0.5s linear all;
+    }
+
+    .box{
+        width: 10vw;
+        height: 10vw;
+        border: #007bff 1px solid;
+        margin: 5px;
+        float: left;
+        font-size: 2vw;
+    }
+    .box0{
+        overflow: hidden;
+    }
+    .box1{
+        background-image: linear-gradient( #ff0000, #00ff00, #0000ff, #ff0000);
+    }
+    .box2{
+        background-image: linear-gradient(to right,red, green, blue);
+    }
+    .box3{
+        background-image: linear-gradient( to left, red, green, blue);
+    }
+ .box4{
+        background-image: linear-gradient( to bottom,red, green, blue);
+    }
+ .box5{
+        background-image: linear-gradient(100px 100px,red, green, blue);
+    }
+    .box6{
+        background-image: linear-gradient( to top right,pink,yellow);
+    }
+    .box7{
+        background-image: linear-gradient( 20deg,red,yellow,green);
+    }
+    .box8{
+        background-image: linear-gradient( 45deg,red 50px,yellow 100px,green 150px);
+    }
+
+    .box00{
+        overflow: hidden;
+    }
+    .box01{
+        background-image: radial-gradient(red, yellow, blue);
+    }
+    .box02{
+        background-image: radial-gradient(at left top,red, yellow, blue);
+    }
+    .box03{
+            background-image: radial-gradient(at 15px 50px ,red, yellow, blue);
+        }
+    .box04{
+            background-image: radial-gradient(50px 100px,red, yellow, blue);
+        }
+    .box05{
+            background-image: radial-gradient(circle,red, yellow, blue);
+        }
+    .box06{
+            background-image: radial-gradient(red 1vw, yellow 3vw, blue 6vw);
+        }
+    .box07{
+            background-image: radial-gradient(20px 20px at 20px 20px ,red 1vw, yellow 3vw, blue 6vw);
+        }
+    .box08{
+        background: radial-gradient(20px 20px at 20px 20px,red 1vw, yellow 3vw, blue 6vw);
+            transition:  1s linear all;
+            font-weight: bold;
+            color: transparent;
+            background-clip:text;
+        }
+
+    .box000{
+        overflow: hidden;
+    }
+    .box001{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: radial-gradient(red 1vw, yellow 2vw, blue 3vw)
+    }
+    .box002{
+        background: repeating-radial-gradient(red 1vw, yellow 2vw, blue 3vw)
+    }
+    .box003{
+        padding: 2px;
+        border: 1px solid;
+        background: repeating-linear-gradient(transparent 0px, transparent 15px, rgb(0, 0, 0) 16px);
+        background-clip: content-box;
+    }
+    
+    @font-face {
+        font-family: "myFont";
+        src: url(./webfont.ttf);
+    }
+    @font-face {
+        font-family: 'sunset';  /* Project id 4736811 */
+        src: url('//at.alicdn.com/t/c/font_4736811_y71luey7egp.js') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4736811_y71luey7egp.js') format('woff'),
+       url('//at.alicdn.com/t/c/font_4736811_y71luey7egp.js') format('truetype');
+}
+
+    .box-transform{
+        background:skyblue;
+        overflow: hidden;
+    }
+    .translate-1,.translate-2{
+        height:10vw;
+        width: 10vw;
+        border:1px solid;
+        margin: 5px;
+        float: left;
+    }
+    .translate-1{
+        background: rgba(172, 255, 47, 0.578);
+    }
+    .translate-1:active{
+        transform: translateX(20px)
+    }
+    .translate-2{
+        background: #25f04745;
+        transition: 0.5s linear all;
+        /* transform: translateY(50px); */
+    }
+    .translate-2:hover{
+        transform: translate(5px, 5px)
+    }
+
+    .scale-1,.scale-2,.scale-3{
+        height:10vw;
+        width: 10vw;
+        border:1px solid;
+        float: left;
+    }
+    .scale-1{
+        background: rgba(172, 255, 47, 0.578);
+    }
+    .scale-1:hover{
+        transform: scaleX(0.5);
+    }
+
+    .scale-2{
+        height: 5vw;
+        background: #25f04745;
+    }
+    .scale-2:hover{
+        transform: scaleY(2);
+    }
+    .scale-3{
+        background: #f7b7b7;
+    }
+    .scale-3:hover{
+        transform: scaleX(-2);
+    }
+
+    .rotate-1,.rotate-2{
+        height:10vw;
+        width: 10vw;
+        border:1px solid;
+        float: left;
+    }
+    .rotate-1{
+        background: rgba(172, 255, 47, 0.578);
+        transition: 0.8s linear all;
+    }
+    .rotate-1:hover{
+        transform: rotate(45deg);
+    }
+    .rotate-2{
+            background: #25f04745;
+            transition: 0.8s linear all;
+        }
+    .rotate-2:hover{
+            transform: rotate(-45deg);
+        }
+
+    .skew-1,.skew-2{
+        height:10vw;
+        width: 10vw;
+        border:1px solid;
+        float: left;
+    }
+    .skew-1{
+            background: rgba(172, 255, 47, 0.578);
+            transition: 0.8s linear all;
+        }
+    .skew-1:hover{
+            transform: skewX(45deg);
+        }
+    .skew-2{
+            
+            background: #25f04745;
+            transition: 0.8s linear all;
+        }
+    .skew-2:hover{
+            transform: skewY(45deg);
+        }
+
+    .matrix-1,.matrix-2{
+        height:10vw;
+        width: 10vw;
+        border:1px solid;
+        float: left;
+        }
+     .matrix-1{
+            background: rgba(172, 255, 47, 0.578);
+            transition: 0.8s linear all;
+        }
+    .matrix-1:hover{
+            transform: translate(20px, 20px)  scale(0.5) rotate(45deg);
+        }
+    
+    .box3d{
+        /* border: 1px solid; */
+        overflow: hidden;
+        /* 开启3d空间 */
+        transform-style: preserve-3d;
+        /* 设置景深 */
+        perspective: 500px;
+        /* 改变3d空间的原点 透视点的位置*/
+        perspective-origin: 90px 90px;
+        /* width: 22vw; */
+    }
+    .box3d-1,.box3d-2{
+        height:10vw;
+        width: 10vw;
+        border:1px solid;
+        margin: 2px;
+        float: left;
+    }
+    .box3d-1{
+        background: rgba(172, 255, 47, 0.578);
+                transition: 0.8s linear all;transform: rotateX(45deg);
+    }
+    /* .box3d-1:hover{
+                
+            } */
+    .box3d-2{
+                background: rgba(172, 255, 47, 0.578);
+                transition: 0.8s linear all;transform: rotateX(45deg)
+               
+            }
+    /* .box3d-2:hover{
+                 
+            } */
+
+    .father{
+        transform-style: preserve-3d;
+        /* 设置景深 */
+        perspective: 500px;
+        perspective-origin: 25% 25%;
+        margin: 10px;
+        float: left;
+    }
+    .son{
+        transform: rotateX(60deg);
+    }
+    .trans-3d{
+        height: 10vw;width: 10vw;background-color: #ca203977;
+        transition: 1s linear all;
+    }
+    .trans-3d:hover{
+        transform: translateZ(100px);
+    }
+    .rotate-3d{
+        height: 10vw;width: 10vw;background-color: #ca203977;
+        transition: 1s linear all;
+    }
+    .rotate-3d:hover{
+            transform: rotateY(60deg);
+        }
+
+    .scale-3d{
+        height: 10vw;width: 10vw;background-color: #ca203977;
+        transition: 1s linear all; 
+    }
+    .scale-3d:hover{
+        transform: scaleZ(6) rotateY(45deg);
+    }
+
+    .d3d{
+        height: 10vw;width: 10vw;background-color: #ca203977;
+        transition: 1s linear all;
+        transform-origin: left top;
+    }
+    .d3d:hover{
+            transform:translateZ(100px) scaleZ(3) rotateY(45deg);
+        }
+        .back-3d{
+            height: 10vw;width: 10vw;background-color: #ca203977;
+            transition: 1.5s linear all;
+            /* transform: rotateY(0deg); */
+            backface-visibility: hidden;
+        }
+        .back-3d:hover{
+                    transform:rotateY(92deg);
+                }
+
+    .trans-1{
+            height: 10vw;width: 10vw;background-color: #ca203977;
+            transition: 1s linear all;
+            text-overflow: ellipsis;
+    }
+    .trans-1:hover{
+        height: 20vw;
+        width: 20vw;
+        background-color: green;
+        transform: rotateZ(45deg);
+        border: 1px solid;
+        border-radius: 50%;
+    }
+
+    .hi{
+        width: 50vw;
+        height: 20vw;
+        border: 1px solid;
+        margin: 5px;
+        
+    }
+    .hi:hover .high{
+        width: 50vw;
+    }
+    .high{
+       width: 13vw;
+       height: 2vw;
+       transition: 3s linear all;
+       border: 1px solid;
+    }
+    .hi1{
+        background: green;
+        /* transition-delay: 0s; */
+        transition-timing-function: ease;
+    }
+    .hi2{
+        background: yellow;
+        /* transition-delay: 1s; */
+        transition-timing-function: linear;
+    }
+    .hi3{
+        background: skyblue;
+        /* transition-delay: 2s; */
+        transition-timing-function: ease-in;
+    }
+    .hi4{
+        background: purple;
+        /* transition-delay: 3s; */
+        transition-timing-function: ease-out;
+    }
+    .hi5{
+        background: red;
+        /* transition-delay: 4s; */
+        transition-timing-function: step-start;
+    }
+    .hi6{
+        background: pink;
+        /* transition-delay: 4s; */
+        transition-timing-function: step-end;
+    }
+    .hi7{
+        background: blue;
+        /* transition-delay: 4s; */
+        transition-timing-function: steps(10);
+    }
+    .hi8{
+        background: orange;
+        transition-timing-function: cubic-bezier(.44,-0.63,.91,-0.39);
+    }
+
+    .outer{
+        width: 20vmax;
+        height: 20vmax;
+        border: 1px solid;        
+        position: relative;
+        overflow: hidden;
+    }
+
+    .outer img{
+        width: 20vmax;
+        height: 20vmax;
+        transition: 0.5s all linear;
+    }
+    .outer:hover img{
+        transform: scale(1.5) rotate(15deg);
+    }
+    .mask{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20vmax;
+        height: 20vmax;
+        transition: 0.5s all linear;
+        font-weight: bold;
+        font-size: 4em;
+        color: white;
+        background: black;
+        opacity: 0;
+        text-align: center;
+        line-height: 20vmax;
+    }
+    .mask:hover{
+        opacity: 0.4;
+    }
+    @keyframes right2 {
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            border-radius: 0%;
+            transform: translateX(20vw);
+            background: yellow;
+        }
+        100%{
+            border-radius: 50%;
+            transform: translateX(40vw) rotate(360deg);
+            background: green;
+        }
+
+    }
+
+
+    .ani-out{
+        width: 50vw;
+        background: linear-gradient(-90deg,deepskyblue,green);
+        /* position: relative; */
+        border:0px solid;
+    }
+    .ani-in{
+        width: 10vw;
+        height: 10vw; 
+        /*    animation: 动画名称 动画时间 动画速度 动画延迟 动画次数 动画方向; */
+        animation: right 1s linear 1s 4 alternate;
+        background: deepskyblue;
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .ani-out:active .ani-in{       
+            background: green;
+    }
+
+    
+        @keyframes right{
+        from{
+            transform: translateX(0);
+        }
+        to{
+            border-radius: 50%;
+            transform: translateX(40vw) rotate(360deg);
+            background: green;
+        }
+    }
+
+    .media-box{
+        border: 1px solid;
+        margin: 5px;
+        width: 10vw;
+        height: 10vw;
+        background: green;
+    }
+    @media screen and (max-width: 600px) {
+        .media-box{
+            border-radius: 50%;
+            background: red;
+        }
+    }
+
+    @media screen and (min-width: 1100px) { 
+        .fixed-element{
+            width: 300px;
+        }
+    }
+    @media screen and (max-width: 200px) { 
+        .fixed-element{
+            display: none;
+        }
+    }
+   
+    .fl0{
+        width: 40vw;
+        height:40vw;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border: 1px solid; 
+        margin: 5px; 
+        overflow: hidden;
+    }
+    .fl{
+        width: 9.84vw;
+        height: 9.83vw;
+        background: skyblue;
+        border: 1px solid;
+    }
+    .fl0:hover{
+       display: flex;
+    }
+
+    select{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: gainsboro;
+        height: 25px;
+        border-radius: 8px;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid;
+    }
+
+    .flexbox{
+        border: 1px solid;
+        flex-grow: 1;
+    }
+  </style>
+</head>
+
+</style>
+<body>
+</style>
+<body id="body">
+    <div class="container">
+        <h1 id="section1">Hello World</h1>
+        <a href="./test1.html">跳转到子目录文件</a>
+        <a href="mailto:3265577395@qq.com">发送邮件给某人</a>
+        <a href="#footer">底部</a>
+        <a href="#h5">html5</a>
+        <a href="#css3">css3</a>
+        <a href="./resume.html">简历</a>
+        <hr>
+        <!-- 无序/有序/定义列表 -->
+        <h4>无序/有序/定义列表</h4>
+        <ul>
+            <li>无序列表 ul 1</li>
+            <li>无序 2</li>
+            <li>无序 3</li>
+          </ul>
+          <ol>
+            <li>有序列表 ol 1</li>
+            <li>有序 2</li>
+            <li>有序 3</li>
+          </ol>
+          <dl>
+            <dt>定义列表 dl 1</dt>
+            <dd>定义 1 的描述内容。</dd>
+            <dt>定义 2</dt>
+            <dd>定义 2 的描述内容。</dd>
+          </dl>
+          <hr>
+          <h4>table表格</h4>
+          <table border="1">
+            <caption>表格标题</caption>
+            <tr>
+              <th>table</th>
+              <td>定义表格的整体容器。</td>
+            </tr>
+            <tr>
+              <th>tr</th>
+              <td>表示表格中的一行。</td>
+            </tr>
+            <tr>
+                <th>th</th>
+                <td>表示表格中的一列。</td>
+            </tr>
+            <tr>
+                <th>td</th>
+                <td>表示表格中的单元格。</td>
+            </tr>
+            <tr>
+                <th>border</th>
+                <td>设置表格边框的宽度。默认为 0，表示没有边框。</td>
+            </tr>
+            <tr>
+                <th>width和height</th>
+                <td>分别设置表格的宽度和高度，可以使用像素值或百分比。</td>
+            </tr>
+            <tr>
+                <th>cellpadding</th>
+                <td>设置单元格内容与边框之间的内边距。</td>
+            </tr>
+            <tr>
+                <th>cellspacing</th>
+                <td>设置单元格之间的间距。</td>
+            </tr>
+            <tr>
+                <th>caption</th>
+                <td>定义表格的标题。</td>
+            </tr>
+            <tr>
+                <th>colspan</th>
+                <td>属性用于合并列，指定一个单元格横跨的列数。</td>
+            </tr>
+            <tr>
+                <th>rowspan</th>
+                <td>属性用于合并行，指定一个单元格纵跨的行数。</td>
+            </tr>
+          </table>
+          <hr>
+        
+
+          <h4>from表单</h4>
+          <form>
+            <p>
+                action属性：指定表单数据提交的目标 URL。<br>
+                method属性：规定提交表单数据的 HTTP 方法，常见的有 “get” 和 “post”。
+            </p>
+            <p>input:</p>
+            <input type="text" name="username" 
+            placeholder=" type='text' name='username' placeholder='用户名' value='admin'" 
+            ><br>
+            <input type="password" name="password" 
+            placeholder=" type='password' name='password' placeholder='密码' value='123456'" 
+            />
+            <p>textarea文本域</p>
+            <textarea name="description" rows="5" cols="30" 
+            placeholder=" textarea标签：创建多行文本输入区域。
+            rows和cols属性：分别指定文本区域的行数和列数。"></textarea>
+            <p>select下拉框</p>
+            <select name="country" style="width: 100px">
+                <option value="china">option1</option>
+                <option value="usa">option2</option>
+                <option value="japan">option3</option>
+              </select>
+            <p>labal</p>
+            <label for="username">label标签：为表单元素提供标签，提高可访问性。
+                for属性：与对应的表单元素的id属性值相同，用于关联标签和表单元素。</label>
+            <input type="text" id="username" placeholder=" id='username'关联">
+            <p>提交表单：当用户点击<input type="submit">按钮或具有type="submit"的按钮时，表单数据会被提交到指定的action URL。
+                重置表单：<input type="reset">按钮用于重置表单，将所有表单元素恢复到初始状态。
+                </p>
+                <label>单选(type="radio")</label>
+            <input type="radio" name="gender" value="male">男
+            <input type="radio" name="gender" value="female">女<br>
+                <label>多选框(type="checkbox")</label>
+            <input type="checkbox" name="hobby" value="reading">阅读
+            <input type="checkbox" name="hobby" value="sports">运动
+            <input type="checkbox" name="hobby" value="music">音乐<br>
+            
+            <input type="hidden" name="user_id" value="12345">
+            <input type="text" name="username" 
+            placeholder="禁用 disabled" disabled><br>
+
+            <fieldset>
+                <legend>个人信息</legend>
+                <p>fieldset 用于将相关的表单元素组合在一起，形成一个逻辑分组。</p>
+                <p> legend 用于为fieldset定义一个标题。</p>
+                name:<input type="text" name="username"><br>
+                email:<input type="email" name="email">
+              </fieldset><br>
+          </form>
+          <hr>
+          <h4>字符实体</h4>
+          <table border="1">
+            <caption>HTML 字符实体示例</caption>
+            <tr>
+                <th>字符实体</th>
+                <th>描述</th>
+                <th>显示结果</th>
+            </tr>
+            <tr>
+                <td>& lt;</td>
+                <td>小于号</td>
+                <td><</td>
+            </tr>
+            <tr>
+                <td>& gt;</td>
+                <td>大于号</td>
+                <td>></td>
+            </tr>
+            <tr>
+                <td>& quot;</td>
+                <td>引号</td>
+                <td>"</td>
+            </tr>
+            <tr>
+                <td>& apos;</td>
+                <td>撇号</td>
+                <td>'</td>
+            </tr>
+            <tr>
+                <td>& amp;</td>
+                <td>与符号</td>
+                <td>&</td>
+            </tr>
+            <tr>
+                <td>& copy;</td>
+                <td>版权符号</td>
+                <td>©</td>
+            </tr>
+            <tr>
+                <td>& reg;</td>
+                <td>注册商标符号</td>
+                <td>®</td>
+            </tr>
+            <tr>
+                <td>& trade;</td>
+                <td>商标符号</td>
+                <td>™</td>
+            </tr>
+            <tr>
+                <td>& nbsp;</td>
+                <td>空格</td>
+                <td>（这里会显示一个空格）</td>
+            </tr>
+        </table>
+        <hr>
+        <ul>
+            <li>
+                <h3>id 属性：</h3>
+                <p>作用：为 HTML 元素提供唯一的标识符。可用于通过 JavaScript 或 CSS 选择器来引用特定元素。</p>
+                <p>示例：&lt;div id="myDiv"&gt;这是一个带有唯一 ID 的 div 元素。&lt;/div&gt;。</p>
+            </li>
+            <li>
+                <h3>class 属性：</h3>
+                <p>作用：为 HTML 元素分配一个或多个类名。可使用 CSS 选择器为具有相同类名的元素应用相同样式，也可通过 JavaScript 操作具有特定类名的元素。</p>
+                <p>示例：&lt;p class="highlight"&gt;这是一个带有类名的段落。&lt;/p&gt;。</p>
+            </li>
+            <li>
+                <h3>style 属性：</h3>
+                <p>作用：直接在 HTML 元素上应用内联 CSS 样式。可设置元素的颜色、字体大小、边框等样式属性。</p>
+                <p>示例：&lt;div style="color: red; background-color: yellow;"&gt;带有内联样式的 div。&lt;/div&gt;。</p>
+            </li>
+            <li>
+                <h3>title 属性：</h3>
+                <p>作用：为 HTML 元素提供一个标题或说明。当鼠标悬停在元素上时，通常会显示 title 属性的值作为工具提示。</p>
+                <p>示例：<a href="#" title="这是一个链接的说明">链接文本</a>。</p>
+            </li>
+            <li>
+                <h3>data-* 属性：</h3>
+                <p>作用：允许开发者在 HTML 元素上存储自定义的数据集。可用于在 JavaScript 中存储和检索与特定元素相关的数据。</p>
+                <p>示例：&lt;div data-user-id="123"&gt;带有自定义数据属性的 div。&lt;/div&gt;。</p>
+            </li>
+            <li>
+                <h3>accesskey 属性：</h3>
+                <p>作用：为 HTML 元素设置快捷键。当用户按下指定的快捷键时，可以快速聚焦或激活该元素。</p>
+                <p>示例：<input type="text" accesskey="s">（按下 Alt + s 可以快速聚焦这个输入框）。</p>
+            </li>
+            <li>
+                <h3>tabindex 属性：</h3>
+                <p>作用：定义元素在 Tab 键顺序中的位置。可控制用户在使用 Tab 键导航页面时元素的聚焦顺序。</p>
+                <p>示例：<input type="text" tabindex="1">（这个输入框在 Tab 键顺序中具有较高的优先级）。</p>
+            </li>
+        </ul>
+        <hr>
+        <h2>CSS</h2>
+        <table border="1px">
+            <tr>
+                <th>css样式</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>行内</td>
+                <td>标签内部写</td>
+            </tr>
+            <tr>
+                <td>内部</td>
+                <td>style标签里写</td>
+            </tr>
+            <tr>
+                <td>外部</td>
+                <td>css文件里写</td>
+            </tr>
+        </table>
+        <p>优先级：行内样式 > 内部样式(&lt;style&gt;标签内的样式) >  外部样式表(通过&lt;link&gt;标签引入的样式文件)。</p>
+        <hr>
+        <h4>语法规范</h4>
+        <ul>
+            <li><strong style="color: red;">p</strong>（选择所有 <strong>&lt;p&gt;</strong>  元素)</li>
+            <li><strong style="color: red;">.my-class</strong>（选择所有具有 <strong>class="my-class"</strong> 的元素）</li>
+            <li><strong style="color: red;">#my-id</strong>（选择所有具有 <strong>id="my-id"</strong> 的元素）</li>
+        </ul>
+        <hr>
+        <table border="1" style="font-size: 0.8rem;">
+            <tr>
+                <th>CSS 属性</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>font-family</td>
+                <td>设置文本的字体。例如：font-family: Arial, sans-serif;</td>
+            </tr>
+            <tr>
+                <td>font-size</td>
+                <td>设置字体大小。</td>
+            </tr>
+            <tr>
+                <td>font-weight</td>
+                <td>设置字体的粗细。可以使用数值（100 - 900）或关键字（normal、bold 等）。例如：font-weight: bold;</td>
+            </tr>
+            <tr>
+                <td>font-style</td>
+                <td>设置字体的样式，如正常（normal）、斜体（italic）等。</td>
+            </tr>
+            <tr>
+                <td>text-decoration</td>
+                <td>添加文本装饰，如下划线（underline）、上划线（overline）、删除线（line-through）等。</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>设置文本颜色。</td>
+            </tr>
+            <tr>
+                <td>background-color</td>
+                <td>设置元素的背景颜色。</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>设置元素的宽度。</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>设置元素的高度。</td>
+            </tr>
+            <tr>
+                <td>margin</td>
+                <td>设置元素的外边距。例如：margin: 10px 20px 10px 20px;（上、右、下、左）或margin: 10px 20px;（上下为 10px，左右为 20px）</td>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td>设置元素的内边距。用法与margin类似</td>
+            </tr>
+            <tr>
+                <td>border</td>
+                <td>设置元素的边框。可以分别设置边框的宽度、样式（如 solid、dashed 等）和颜色。例如：border: 1px solid black;。</td>
+            </tr>
+            <tr>
+                <td>display</td>
+                <td>设置元素的显示方式，常见的值有block（块级元素）、inline（行内元素）、inline-block（行内块元素）等。</td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>设置元素的浮动。可以使元素向左或向右浮动</td>
+            </tr>
+            <tr>
+                <td>clear</td>
+                <td>清除浮动。用于防止元素被浮动元素包围。例如：clear: both;。</td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>设置元素的定位方式。常见的值有static（默认，无定位）、relative（相对定位）、absolute（绝对定位）、fixed（固定定位）。例如：position: relative;。</td>
+            </tr>
+            <tr>
+                <td>opacity</td>
+                <td>设置元素的不透明度。取值范围从 0（完全透明）到 1（完全不透明）</td>
+            </tr>
+            <tr>
+                <td style="cursor: pointer;">cursor</td>
+                <td>设置鼠标指针在元素上的样式。例如：cursor: pointer;（手形指针）。</td>
+            </tr>
+            <tr>
+                <td>overflow</td>
+                <td>处理内容超出元素尺寸的情况。可以设置为visible（默认，内容可见）、hidden（隐藏超出部分）、scroll（出现滚动条）等。</td>
+            </tr>
+        </table>
+        <hr>
+        <fieldset>
+            <legend>css通配选择器</legend>
+        <ul>
+            <li>重置样式</li>
+            <p>   * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+              }</p>
+            <li>设置全局字体样式</li>
+            <p> * {
+                font-family: Arial, sans-serif;
+              }</p>
+           
+            <li>清除默认的列表样式</li>
+            <p>
+                * ul, * ol {
+                    list-style: none;
+                  }
+            </p>
+        </ul>
+        </fieldset>
+     <fieldset>
+        <legend>元素选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p> p {
+                 color: blue;
+                 font-size: 16px;
+              }这段 CSS 代码将所有&lt;p&gt;段落元素的文本颜色设置为蓝色，字体大小设置为 16 像素。
+            </p>
+
+            <li>组合使用</li>
+            <p>div p {
+                background-color: yellow;
+              }
+           这里使用后代选择器，选择所有在&lt;div&gt;元素内部的&lt;p&gt;段落元素，并将它们的背景颜色设置为黄色。
+        </p>
+        
+           <li>多个元素选择</li>
+           <p>
+            h1, h2, h3 {
+                font-weight: bold;
+              }
+           这个例子选择了所有的&lt;h1&gt;、&lt;h2&gt;>和&lt;h3&gt;标题元素，并将它们的字体设置为粗体。
+           </p>
+           
+        </ul>
+     </fieldset>
+
+     <fieldset>
+        <legend>类选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p>
+               .highlight {
+                    background-color: yellow;
+                  }
+            </p>
+            <li>组合使用</li>
+            <p>
+               .container.highlight {
+                    font-style: italic;
+                  }
+            </p>
+            <li>在 HTML 中用 class 属性给元素添加类名。</li>
+            <li>在 CSS 中以 “.” 开头加上类名来设置样式。</li>
+            <li>一个类可以应用于多个元素，提高样式的复用性。</li>
+     </fieldset>
+
+     <fieldset>
+        <legend>id选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             #header {
+                    background-color: #333;
+                    color: white;
+                  }
+            </p>
+            <li>组合使用</li>
+            <p>
+             #content.highlight {
+                    font-weight: bold;
+
+     </fieldset>
+
+     <fieldset>
+        <legend>交集选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             <!-- div#header {
+                    font-size: 24px;
+                  } -->
+            </p>
+            <p>div标签又有id为header</p>
+            <li>组合使用</li>
+            <p>
+             <!-- div#content.highlight {
+                    color: red;
+                  } -->
+            </p>
+     </fieldset>
+
+     <fieldset>
+        <legend>并集选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             p, div {
+                    margin: 10px;
+                  }
+            </p>
+            <p>所有p和div标签</p>
+            <li>组合使用</li>
+            <p>
+             p.highlight, div.highlight {
+                    font-weight: bold;
+                  }
+            </p>
+     </fieldset>
+
+     <fieldset>
+        <legend>html元素之间的关系</legend>
+        <ul>
+            <li>父子关系</li>
+            <p>
+             &lt;div&gt;
+                &lt;p&gt;这是一个段落&lt;/p&gt;
+              &lt;/div&gt;
+            </p>
+            <li>兄弟关系</li>
+            <p>
+             &lt;p&gt;这是一个段落&lt;/p&gt;<br>
+              &lt;p&gt;这是另一个段落&lt;/p&gt;
+            </p>
+            <li>祖先与后代关系</li>
+            <p>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;这是一个段落,p标签的祖先有body，div&lt;/p&gt;<br>
+             &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+              &lt;/body&gt;<br>
+            </p>
+     </fieldset>
+
+     <fieldset>
+        <legend>后代选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             div p {
+                    color: blue;
+                  }
+            </p>
+            <p>后代选择器由两个或多个选择器用空格分隔组成。例如，选择div元素内部的所有p元素</p>
+            <li>组合使用</li>
+            <p>
+             div ul li {
+                    list-style: disc;
+                  }
+            </p>
+
+     </fieldset>
+
+     <fieldset >
+        <legend>子代选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             div > p {
+                    font-weight: bold;
+                  }
+            </p>
+            <p>子代选择器由两个选择器用大于号（>）分隔组成。例如，选择div元素内部的所有直接子元素p。</p>
+            <li>组合使用</li>
+
+     </fieldset>
+
+     <fieldset>
+        <legend>相邻兄弟选择器</legend>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             p + p {
+                    margin-top: 10px;
+                  }
+            </p>
+            <p>相邻兄弟选择器由两个选择器用加号（+）分隔组成。例如，选择紧接在p元素之后的第一个p元素。</p>
+            <li>组合使用</li>
+            <p>
+             h1 + p {
+                    font-size: 24px;
+                  }
+            </p>
+            <legend>通用兄弟选择器</legend>
+            <p>
+             p ~ p {
+                    color: red;
+                  }
+            </p>
+            <p>通用兄弟选择器由两个选择器用波浪线（~）分隔组成。例如，选择p元素之后的所有p元素。</p>
+
+     </fieldset>
+
+     <fieldset>
+        <legend>属性选择器</legend>
+        <p>在 CSS 中，属性选择器允许根据 HTML 元素的属性和属性值来选择元素并应用样式。</p>
+        <a href="eg8.txt"></a>
+        <ul>
+            <li>基本用法</li>
+            <p>属性选择器由选择器和方括号（[]）组成。例如，选择href属性值为URL_ADDRESS的a元素。</p>
+            <li>组合使用</li>
+            <p>属性选择器可以与其他选择器组合使用，例如选择type属性值为text的input元素。</p>
+     </fieldset>
+
+     <fieldset>
+        <legend>伪类选择器</legend>
+        <p>伪类选择器用于选择处于特定状态或具有特定行为的元素。伪类选择器以一个冒号（:）开头</p>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             a:hover {
+                    color: red;
+                  }
+            </p>
+            <p>伪类选择器由选择器和冒号（:）组成。例如，选择鼠标悬停在a元素上时的样式。</p>
+        </ul>
+            <table border="1">
+                <tr>
+                    <th>伪类选择器</th>
+                    <th>描述</th>
+                    <!-- <th>示例代码</th> -->
+                </tr>
+                <tr>
+                    <td>:link</td>
+                    <td>选择未被访问过的链接。</td>
+                    <!-- <td>a:link { color: blue; }</td> -->
+                </tr>
+                <tr>
+                    <td>:visited</td>
+                    <td>选择已被访问过的链接。</td>
+                    <!-- <td>a:visited { color: purple; }</td> -->
+                </tr>
+                <tr>
+                    <td>:hover</td>
+                    <td>选择鼠标悬停在其上的元素。</td>
+                    <!-- <td>button:hover { background-color: gray; }</td> -->
+                </tr>
+                <tr>
+                    <td>:active</td>
+                    <td>选择正在被激活（如被点击）的元素。</td>
+                    <!-- <td>a:active { color: red; }</td> -->
+                </tr>
+                <tr>
+                    <td>:focus</td>
+                    <td>选择获得焦点的元素，如输入框在被选中时。</td>
+                    <!-- <td>input:focus { border: 2px solid green; }</td> -->
+                </tr>
+                <tr>
+                    <td>:first-child</td>
+                    <td>选择父元素的第一个子元素。</td>
+                    <!-- <td>ul li:first-child { font-weight: bold; }</td> -->
+                </tr>
+                <tr>
+                    <td>:last-child</td>
+                    <td>选择父元素的最后一个子元素。</td>
+                    <!-- <td>p:last-child { text-decoration: underline; }</td> -->
+                </tr>
+                <tr>
+                    <td>:nth-child(n)</td>
+                    <td>选择父元素的第 n 个子元素，可以使用具体的数字、表达式或关键字。</td>
+                    <!-- <td>tr:nth-child(even) { background-color: lightgray; }</td> -->
+                </tr>
+                <tr>
+                    <td>:checked</td>
+                    <td>选择被选中的元素，如单选框或复选框。</td>
+                    <!-- <td>input[type="checkbox"]:checked { background-color: green; }</td> -->
+                </tr>
+                <tr>
+                    <td>:disabled</td>
+                    <td>选择被禁用的元素，如不可点击的按钮。</td>
+                    <!-- <td>button:disabled { background-color: gray; }</td> -->
+                </tr>
+            </table>
+     </fieldset>
+
+     <fieldset>
+        <legend>伪元素选择器</legend>
+        <p>伪元素选择器用于选择元素的部分内容，而不是整个元素。伪元素选择器以两个冒号（::）开头。</p>
+        <ul>
+            <li>基本用法</li>
+            <p>
+             p::first-line {
+                    font-weight: bold;
+                  }
+            </p>
+            <p>伪元素选择器由选择器和两个冒号（::）组成。例如，选择p元素的第一行。</p>
+        </ul>
+            <table>
+                <tr>
+                    <th>伪元素选择器</th>
+                    <th>描述</th>
+                    <!-- <th>示例代码</th> -->
+                </tr>
+                <tr>
+                    <td>::before</td>
+                    <td>在元素的内容之前插入内容。</td>
+                    <!-- <td><code>p::before { content: "Before: "; }</code></td> -->
+                </tr>
+                <tr>
+                    <td>::after</td>
+                    <td>在元素的内容之后插入内容。</td>
+                    <!-- <td><code>p::after { content: " After"; }</code></td> -->
+                </tr>
+                <tr>
+                    <td>::first-line</td>
+                    <td>选择元素的第一行。</td>
+                    <!-- <td><code>p::first-line { font-weight: bold; }</code></td> -->
+                </tr>
+                <tr>
+                    <td>::first-letter</td>
+                    <td>选择元素的第一个字母。</td>
+                    <!-- <td><code>p::first-letter { font-size: 2em; }</code></td> -->
+                </tr>
+                <tr>
+                    <td>::selection</td>
+                    <td>选择被用户选中的文本。</td>
+                    <!-- <td><code>::selection { background-color: yellow; }</code></td> -->
+                </tr>
+            </table>
+     </fieldset>
+
+     <fieldset>
+        <legend>选择器优先级</legend>
+        <p>优先级层次：<br>行内样式 > <strong>*ID 选择器</strong> > <strong>*类选择器、*属性选择器、*伪类选择器</strong> > 元素选择器和伪元素选择器。</p>
+     </fieldset>
+
+     <fieldset>
+        <legend>css三大特性</legend>
+        <ul>
+            <li>层叠性</li>
+            <p>层叠性是指当多个样式规则应用于同一个元素时，浏览器会根据一定的规则来确定最终应用的样式。
+                这些规则包括选择器的优先级、样式的来源（如内联样式、内部样式表、外部样式表）以及样式规则的出现顺序等。</p>
+            <li>继承性</li>
+            <p>继承性是指某些 CSS 属性可以从父元素传递给子元素。这使得在设置样式时，可以通过为父元素设置样式，让子元素自动继承部分属性，从而减少重复的代码。</p>
+                <div style="color: red;">
+                    <p>This is a paragraph.</p>
+                </div>
+            <li>优先级</li>
+            <p>优先级是指在 CSS 中，当多个选择器同时应用于同一个元素时，浏览器会根据选择器的优先级来决定最终应用的样式。优先级的规则是：<br>
+                内联样式（inline style） > 内部样式表（internal style sheet） > 外部样式表（external style sheet）。<br>
+        </ul>
+     </fieldset>
+
+     <fieldset>
+        <legend>颜色表示</legend>
+        <ul>
+            <li>颜色名称</li>
+            <p>
+                颜色名称是指预定义的颜色名称，如red、blue、green等。<br>
+                <!-- &lt;div style="color: red;background-color: black;"> -->
+                <div style="width: 50%; color: red;background-color: black;">这是红色文本</div>&lt;/div>
+            </p>
+
+            <li>十六进制表示法</li>
+            <p>
+                十六进制表示法是指使用六位十六进制数字来表示颜色，例如#FF0000表示红色。<br>
+                <!-- &lt;div style="color: #FF0000;background-color: #aaaaaa;"> -->
+                <div style="width: 50%;color: #FF0000;background-color: #aaaaaa;">这是红色文本</div>&lt;/div>
+            </p>
+            <li>RGB表示法</li>
+            <p>
+                RGB表示法是指使用三个数字来表示颜色，分别表示红色、绿色和蓝色的强度，范围从0到255。例如，rgb(255, 0, 0)表示红色。<br>
+                <!-- &lt;div style="color: rgb(255, 0, 0);background-color: rgb(170, 170, 170);"> -->
+                <div style="width: 50%;color: rgb(255, 0, 0);background-color: rgb(170, 170, 170);">这是红色文本</div>&lt;/div>
+            </p>
+            <li>RGBA表示法</li>
+            <p>
+                RGBA表示法是在RGB表示法的基础上增加了一个透明度值，用于控制颜色的透明度。<br>透明度值的范围从0（完全透明）到1（完全不透明）。例如，rgba(255, 0, 0, 0.5)表示半透明的红色。<br>
+                <!-- &lt;div style="color: rgba(255, 0, 0, 0.5);background-color: rgba(170, 170, 170, 0.5);"> -->
+                <div style="width: 50%;color: rgba(255, 0, 0, 0.5);background-color: rgba(170, 170, 170, 0.5);">这是红色文本</div>&lt;/div>
+            </p>
+        </ul>
+     </fieldset>
+
+     <fieldset>
+        <legend>常用字体属性</legend>
+        <ul>
+            <li>font-family</li>
+            <p style="font-family:Arial, Helvetica, sans-serif">设置字体的名称，例如：font-family: Arial, sans-serif;</p>
+            <li>font-size</li>
+            <p style="font-size: 20px;">设置字体的大小，例如：font-size: 16px;</p>
+            <li>font-weight</li>
+            <p style="font-weight: bold;">设置字体的粗细，例如：font-weight: bold;</p>
+            <li>font-style</li>
+            <p style="font-style: italic;">设置字体的(字体风格)样式，例如：font-style: italic;</p>
+            <li>font-variant</li>
+            <p style="font-variant: small-caps;">设置字体的变体，例如：font-variant: small-caps;</p>
+            <li>line-height</li>
+            <p style="line-height: 1.5;">设置行高，例如：line-height: 1.5;</p>
+            <li>test-decoration</li>
+            <p style="text-decoration: underline;">设置文本的装饰，修饰，例如：text-decoration: underline;</p>
+            <li>text-transform</li>
+            <p style="text-transform: uppercase;">设置文本的大小写，例如：text-transform: uppercase;</p>
+            <li>font 复合属性</li>
+            <p style="font: italic bold 16px Arial, sans-serif;">设置字体的样式、粗细、大小和字体族，例如：font: italic bold 16px Arial, sans-serif;</p>
+            <li>文本颜色</li>
+            <p style="color: red;">设置文本的颜色，例如：color: red;</p>
+            <li>letter-spacing 文本间距</li>
+            <p style="letter-spacing: 5px;">设置文本的字母间距，例如：letter-spacing: 5px;</p>
+            <li>indent 文本缩进</li>
+            <p style="text-indent: 2em;">设置文本的缩进，例如：text-indent: 2em;</p>
+            <li>text-align 文本水平对齐</li>
+            <p style="text-align: center;">设置文本的对齐方式，例如：text-align: center;</p>
+            <li>vertical-align 文本对齐-垂直</li>
+            <p style="vertical-align: middle;">设置文本的垂直对齐方式，例如：vertical-align: middle;</p>
+            <ol>
+                <li>top</li>
+                <li>bottom</li>
+                <li>middle</li>
+                <li>baseline</li>
+            </ol>
+            <li>justify-content</li>
+            <p>justify-content 属性用于设置 flex 容器中项目的对齐方式。它可以设置为以下值：</p>
+            <ol>
+                <li>flex-start</li>
+                <p>左对齐</p>
+                <li>flex-end</li>
+                <p>右对齐</p>
+                <li>center</li>
+                <p>水平居中</p>
+                <li>space-between</li>
+                <p>两端对齐</p>
+                <li>space-around</li>
+                <p>每个项目两侧的间隔相等</p>
+            </ol>
+        </ul>
+     </fieldset>
+
+     <fieldset>
+        <legend>细说font-size</legend>
+        <h3>单位</h3>
+        <p>
+            <strong>像素（px）：</strong><br>
+            定义：最常用的单位之一，表示绝对大小。例如，font-size: 16px;表示字体大小为 16 像素。<br>
+            特点：在不同设备上显示的大小相对固定，但在高分辨率设备上可能显得较小。<br>
+            适用场景：适用于需要精确控制字体大小的情况，如设计要求严格的界面或需要与特定图形元素对齐的文本。<br>
+            <strong>百分比（%）：</strong><br>
+            定义：相对于父元素的字体大小进行设置。例如，如果父元素的字体大小为 16px，子元素设置为font-size: 120%;，则子元素的字体大小为 19.2px（16px * 120%）。<br>
+            特点：具有相对灵活性，随着父元素字体大小的变化而变化。<br>
+            适用场景：当需要子元素的字体大小与父元素保持一定比例关系时，可以使用百分比单位。<br>
+           <strong>em：</strong><br>
+            定义：也是相对于父元素的字体大小进行设置。1em 等于当前元素的字体大小。如果父元素的字体大小为 16px，子元素设置为font-size: 1.2em;，则子元素的字体大小为 19.2px（16px * 1.2）。<br>
+            特点：与百分比类似，具有相对灵活性，并且在一些情况下更易于计算和调整。<br>
+            适用场景：常用于响应式设计中，使字体大小能够根据不同的屏幕尺寸和布局进行自适应调整。<br>
+           <strong>rem：</strong> <br>
+            定义：相对于根元素（通常是<html>元素）的字体大小进行设置。例如，如果根元素的字体大小为 16px，其他元素设置为font-size: 1.5rem;，则字体大小为 24px（16px * 1.5）。<br>
+            特点：提供了一种全局统一的字体大小调整方式，避免了多层嵌套元素中字体大小计算的复杂性。<br>
+            适用场景：在需要保持整个页面字体大小一致性的情况下非常有用，尤其是在响应式设计中。<br>
+            <strong>vw,vh：</strong><br>
+            定义：相对于视口的宽度和高度进行设置。例如，font-size: 10vw;表示字体大小为视口宽度的 10%。<br>
+            特点：相对于视口的尺寸进行设置，具有较好的响应式适配能力。<br>
+        </p>
+     </fieldset>
+
+     <fieldset>
+        <legend>vertical-align</legend>
+        <table>
+            <tr>
+                <th>属性值</th>
+                <th>描述</th>
+                <th>示例</th>
+            </tr>
+            <tr>
+                <td>baseline</td>
+                <td>使元素的基线与父元素的基线对齐。对于文本来说，基线是字符底部的线。</td>
+                <td>文本<img src="example.png" style="vertical-align:baseline;">图片底部与文本基线对齐。</td>
+            </tr>
+            <tr>
+                <td>top</td>
+                <td>将元素的顶部与行的顶部对齐。</td>
+                <td>文本<img src="example.png" style="vertical-align:top;">图标与该行文本顶部对齐。</td>
+            </tr>
+            <tr>
+                <td>middle</td>
+                <td>将元素的中部与父元素的基线加上父元素 x-height（字符 x 的高度）的一半对齐。</td>
+                <td>文本<img src="example.png" style="vertical-align:middle;">图片中部与文本中部大致对齐。</td>
+            </tr>
+            <tr>
+                <td>bottom</td>
+                <td>将元素的底部与行的底部对齐。</td>
+                <td>文本<img src="example.png" style="vertical-align:bottom;">下划线与该行文本底部对齐。</td>
+            </tr>
+            <tr>
+                <td>sub</td>
+                <td>使元素成为下标。</td>
+                <td>H<sub style="vertical-align:sub;">2</sub>O</td>
+            </tr>
+            <tr>
+                <td>super</td>
+                <td>使元素成为上标。</td>
+                <td>X<sup style="vertical-align:super;">2</sup></td>
+            </tr>
+            <tr>
+                <td>text-top</td>
+                <td>将元素的顶部与父元素的字体顶部对齐。</td>
+                <td>文本<img src="example.png" style="vertical-align:text-top;">图片顶部与文本字体顶部对齐。</td>
+            </tr>
+            <tr>
+                <td>text-bottom</td>
+                <td>将元素的底部与父元素的字体底部对齐。</td>
+                <td>文本<img src="example.png" style="vertical-align:text-bottom;">图片底部与文本字体底部对齐。</td>
+            </tr>
+        </table>
+     </fieldset>
+<hr>
+     <fieldset>
+        <legend>列表相关属性</legend>
+            <ul>
+                <h4>list-style-type</h4>
+                <li style="list-style-type: circle;">circle 实心圆（默认值）</li>
+                <li style="list-style-type: disc;">disc 实心圆</li>
+                <li style="list-style-type: square;">square 实心方块</li>
+                <li style="list-style-type: decimal;">decimal 阿拉伯数字</li>
+                <li style="list-style-type: decimal-leading-zero;">decimal-leading-zero 阿拉伯数字，不足两位补零</li>
+                <li style="list-style-type: lower-roman;">lower-roman 小写罗马数字</li>
+                <li style="list-style-type: upper-roman;">upper-roman 大写罗马数字</li>
+                <li style="list-style-type: lower-alpha;">lower-alpha 小写英文字母</li>
+                <li style="list-style-type: upper-alpha;">upper-alpha 大写英文字母</li>
+                <li style="list-style-type: none;">none 无</li>
+            </ul>
+            <ul>
+                <h4>list-style-position</h4>
+                <li style="list-style-position: inside;">inside 列表项符号在文本内</li>
+                <li style="list-style-position: outside;">outside 列表项符号在文本外</li>
+            </ul>
+            <ul>
+                <h4>list-style-image</h4>
+                <li style="list-style-image: url('./屏幕截图\ 2024-10-30\ 153850.png');">自定义列表项符号(图片)</li>
+            </ul>
+     </fieldset>
+     <fieldset>
+        <legend>边框相关属性</legend>
+            <table>
+                <tr>
+                    <th>属性值</th>
+                    <th>描述</th>
+                    <th>示例</th>
+                </tr>
+                <tr style="border-width: 5px;border-style: solid;">
+                    <td>border-width</td>
+                    <td>设置边框的宽度。</td>
+                    <td>border-width: 5px;</td>
+                </tr>
+                <tr style="border-style: solid;">
+                    <td>border-style</td>
+                    <td>设置边框的样式。</td>
+                    <td>border-style: solid;</td>
+                </tr>
+                <tr style="border-color: red; border-style: solid;">
+                    <td>border-color</td>
+                    <td>设置边框的颜色。</td>
+                    <td>border-color: red;</td>
+                </tr>
+                <tr style="border-radius: 5px;border-style: solid;border-width: 5px;">
+                    <td>border-radius</td>
+                    <td>设置边框的圆角。</td>
+                    <td>border-radius: 5px;</td>
+                </tr>
+
+                <tr style="border: 5px solid red;">
+                    <td>border</td>
+                    <td>设置边框的宽度、样式和颜色。</td>
+                    <td>border: 1px solid red;</td>
+                </tr>
+                </table>
+                <p>border-style</p>
+                <table>
+                    <td style="border-style: none;">无边框。none</td>
+                </table>
+                <table>
+                    <td style="border-style: solid;border-width: 10px;">实线边框。solid</td>
+                </table>
+                <table>
+                    <td style="border-style: dashed;border-width: 10px;">虚线边框。dashed</td>
+                    </table>
+                <table>
+                    <td style="border-style: dotted;border-width: 10px;">点线边框。dotted</td>
+                    </table>
+                <table>
+                    <td style="border-style: double;border-width: 10px;">双线边框。double</td>
+                    </table>
+                <table>
+                    <td style="border-style: groove;border-width: 10px;">3D 凹槽边框。groove</td>
+                    </table>
+                <table>
+                    <td style="border-style: ridge;border-width: 10px;">3D 凸脊边框。ridge</td>
+                    </table>
+                <table>
+                    <td style="border-style: inset;border-width: 10px;">3D 凹入边框。inset</td>
+                    </table>
+                <table>
+                    <td style="border-style: outset;border-width: 10px;">3D 凸出边框。outset</td>
+                    </table>
+     </fieldset>
+
+     <fieldset>
+        <legend>表格独有属性</legend>
+        <table border="1">
+            <caption style="caption-side:bottom">表格标题</caption>
+            <tr>
+                <th>属性值</th>
+                <!-- <th>描述</th> -->
+                <th>示例</th>
+            </tr>
+            <tr">
+                <td>border-collapse</td>
+                <!-- <td>设置表格边框的合并方式。</td> -->
+                <td>border-collapse: collapse;<br>separate：边框分开，这是默认值。表格的每个单元格都有独立的边框，边框之间可能会有间距。<br>
+                    collapse：合并边框。相邻的单元格边框会合并为一个单一的边框，使表格看起来更加整洁。</td>
+            </tr>
+            <tr>
+                <td>border-spacing</td>
+                <!-- <td>设置表格边框之间的间距。</td> -->
+                <td>border-spacing: 10px;</td>
+            </tr>
+            <tr>
+                <td>caption-side</td>
+                <!-- <td>设置表格标题的位置。</td> -->
+                <td>caption-side: top;</td>
+            </tr>
+            <tr>
+                <td>empty-cells</td>
+                <!-- <td>设置表格中空单元格的显示方式。</td> -->
+                <td>empty-cells: show;<br>show：显示空单元格。<br>
+                    hide：隐藏空单元格。</td>
+            </tr>
+            <tr>
+                <td>table-layout</td>
+                <!-- <td>设置表格的布局方式。</td> -->
+                <td>table-layout: auto;<br>auto：自动布局。表格的宽度由内容决定。<br>
+                    fixed：固定布局。表格的宽度由表格宽度属性决定。</td>
+            </tr>
+        </table>
+     </fieldset>
+
+     <fieldset>
+        <legend>背景相关属性</legend>
+        <ul>
+            <li>
+                <div style="background-color: #FF0000;">background-color</div>
+            </li>
+            <li>
+                <div style="background-image: url('./屏幕截图\ 2024-10-30\ 153850.png'); color:chartreuse;">background-image</div>
+            </li>
+            <li>
+                背景重复方式
+                <ul>
+                    <li>background-repeat: repeat; 默认值，背景图像在水平和垂直方向上重复。</li>
+                    <li>background-repeat: repeat-x; 背景图像在水平方向上重复。</li>
+                    <li>background-repeat: repeat-y; 背景图像在垂直方向上重复。</li>
+                    <li>background-repeat: no-repeat; 背景图像不重复。</li>
+                </ul>
+            </li>
+            <li>
+                background-attachment
+                <ul>
+                    <li>background-attachment: scroll; 默认值，背景图像随内容滚动。</li>
+                    <li>background-attachment: local; 背景图像相对于元素自身的位置固定。</li>
+                    <li>background-attachment: fixed; 背景图像固定在视口内，不会随内容滚动。</li>
+                </ul>
+            </li>
+
+        </ul>
+     </fieldset>
+
+     <fieldset>
+        <legend>鼠标相关属性</legend>
+        <strong>cursor 鼠标指针样式</strong> 
+        <ul class="ull">
+           
+            <li>
+                <div style="cursor: pointer;">cursor: pointer;</div>
+            </li>
+            <li>
+                <div style="cursor: move;">cursor: move;</div>
+            </li>
+            <li>
+                <div style="cursor: text;">cursor: text;</div>
+            </li>
+            <li>
+                <div style="cursor: wait;">cursor: wait;</div>
+            </li>
+            <li>
+                <div style="cursor: help;">cursor: help;</div>
+            </li>
+            <li>
+                <div style="cursor: url('./屏幕截图\ 2024-10-30\ 153850.png'), auto;">cursor: url('./屏幕截图\ 2024-10-30\ 153850.png'), auto;</div>
+            </li>
+            <li>
+                <div style="cursor: default;">cursor: default;</div>
+            </li>
+            <li>
+                <div style="cursor: not-allowed;">cursor: not-allowed;</div>
+            </li>
+        </ul>
+        <strong>:hover 鼠标悬停效果</strong>
+        <ul>
+            <li>
+                <div class="hoverr">悬停</div>
+            </li>
+        </ul>
+        <strong>:active伪类（鼠标点击效果）</strong>
+        <ul>
+            <li>
+                <div class="activee">点击</div>
+            </li>
+        </ul>
+     </fieldset>
+
+     <fieldset style="width: 100%;">
+        <legend>元素的显示模式</legend>
+        <ul>
+            <li>块级元素</li><p>
+            独占一行，无论其内容多少，都会在垂直方向上占据整个可用空间。<br>
+            可以设置宽度、高度、内边距（padding）和外边距（margin）。<br>
+            常见的块级元素有&lt;div&gt;&lt;p&gt;&lt;h1&gt;-&lt;h6&gt;&lt;dul&gt;&lt;ol&gt;
+            等。</p>
+            <li>行内元素</li><p>
+            不会独占一行，只占据其内容所需的空间。<br>
+            无法设置宽度和高度，内边距和外边距只对左右有效。<br>
+            常见的行内元素有&lt;span&gt;&lt;a&gt;&lt;img&gt;等。</p>
+            <li>行内块元素（inline-block）</li>
+            <p>
+                结合了行内元素和块级元素的特点。<br>
+                可以在同一行内显示，同时可以设置宽度、高度、内边距和外边距。<br>
+                常见的行内块元素有&lt;input&gt;、&lt;button&gt;等。
+            </p>
+            <li>弹性盒子（flex）</li>
+            <p>
+                一种用于创建灵活的布局的技术。<br>
+                可以在容器内创建多个弹性子元素，通过设置弹性盒子的属性来控制子元素的布局。<br>
+                常见的应用场景包括创建水平导航栏、创建响应式布局等。<br>
+            </p>
+            <li>网格布局（grid）</li>
+            <p>
+                    可以将页面划分为二维的网格，方便地进行布局。<br>
+                    可以精确地控制网格的大小、间距和对齐方式。<br>
+                    适用于复杂的布局需求，尤其是需要多行多列的布局。
+            </p>
+            <li>修改元素的显示模式</li>
+            <p>可以通过修改元素的display属性来改变元素的显示模式:block、inline、inline-block、flex、gird</p>
+            <!-- <code> .container {
+                display: flex;
+              }</code> -->
+        </ul>
+        
+        <div style="width: 80%; height: 100px; background-color: rgb(163, 163, 227);">块级元素（block）This is a block-level element.</div>
+        <div style="width: 80%; height: 100px; background-color: rgb(143, 143, 231);">块级元素（block）This is a block-level element.</div>
+        <span style="background-color: green;">行内元素（inline）</span>
+        <span style="background-color: yellow;">行内元素（inline）</span>
+        <input type="text" style="width: 80%; height: 30px; background-color: purple;" placeholder="行内块元素（inline-block）">
+        <button style="width: 80%; height: 40px; background-color: orange;">行内块元素（inline-block)</button>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 80%; height: 100px; background-color: red;">弹性盒子（flex）Box 1</div>
+            <div style="width: 80%; height: 100px; background-color: green;">弹性盒子（flex）Box 2</div>
+          </div>
+          <div style="display: grid; grid-template-columns: 80px 80px; grid-template-rows: 100px 100px;">
+            <div style="background-color: blue;">网格布局（grid）<br>Box 1</div>
+            <div style="background-color: yellow;">网格布局（grid）<br>Box 2</div>
+            <div style="background-color: purple;">网格布局（grid）<br>Box 3</div>
+            <div style="background-color: orange;">网格布局（grid）<br>Box 4</div>
+          </div>
+     </fieldset>
+
+        <fieldset>
+            <legend>盒子模型</legend>
+            <ul>
+                <li>组成部分</li>
+                <a href="eg9.html">示例 eg9</a>
+
+                <li>content 溢出处理:
+                    <ul>
+                        <li>overflow: visible; 默认值，内容溢出部分可见。</li>
+                        <li>overflow: hidden; 内容溢出部分隐藏。</li>
+                        <li>overflow: scroll; 内容溢出部分显示滚动条。</li>
+                        <li>overflow: auto; 根据需要显示滚动条。</li>
+                    </ul>
+                </li>
+                <li>默认宽度：
+                    <ol>
+                        <li>块级元素：默认宽度为父容器的宽度。</li>
+                        <li>行内元素：默认宽度为内容的宽度,宽度就会刚好容纳这些字符.</li>
+                        <li>行内块元素：默认宽度为内容的宽度。</li>
+                        <li>特殊元素：img默认宽度是图像的原始宽度</li>
+                    </ol>
+                </li>
+                <li>padding / margin:
+                    <ul>
+                        <li>padding: 10px 20px; 上下为10px，左右为20px。</li>
+                        <li>padding: 10px 20px 30px; 上为10px，左右为20px，下为30px。</li>
+                        <li>padding: 10px 20px 30px 40px; 上为10px，右为20px，下为30px，左为40px。</li>
+                        <li>padding-top、padding-left、padding-right、padding-bottom</li>
+                    </ul>
+                </li>
+                <li>border:
+                    <ul>
+                        <li>border: 1px solid red; 上、右、下、左为1px，颜色为红色。</li>
+                        <li>border-top、border-left、border-right、border-bottom</li>
+                    </ul>
+                </li>
+
+                <li>margin塌陷、合并问题
+                    <a href="test1.html">示例</a>
+                </li>
+                <li>内容溢出:text-overflow
+                    <div style="margin-bottom:3px;text-overflow: clip;overflow:hidden;border:solid;height: 50px; background-color: yellowgreen;">
+                        overflow: hidden<br>
+                        text-overflow: clip<br>
+                    内容溢出<br>
+                    内容溢出<br>
+                    </div>
+                    <div style="overflow:hidden;text-overflow: ellipsis;border:solid;height: 50px; background-color: yellowgreen;">
+                        text-overflow: ellipsis<br>
+                        overflow:hidden<br>
+                    内容溢出<br>
+                    内容溢出<br>
+                    </div>
+                </li>
+
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>隐藏元素的两种方式</legend>
+            <ul>
+                <li>display: none;</li>
+                <li>visibility: hidden;</li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>css样式继承</legend>
+            <p>样式继承是指某些 CSS 属性可以从父元素传递给子元素</p>
+            <ul>
+                <li>可继承属性
+                    <ul>
+                        <li>font-size（字体大小）</li>
+                        <li>font-family（字体族）</li>
+                        <li>color（文本颜色）</li>
+                        <li>text-align（文本对齐方式）</li>
+                        <li>line-height（行高）</li>
+                    
+                    </ul>
+                </li>
+                <li>不可继承属性
+                    <ul>    
+                        <li>border</li>
+                        <li>padding</li>
+                        <li>margin</li>
+                        <li>background</li>
+                        <li>width</li>
+                        <li>height</li>
+                        <li>position</li>
+                        <li>float</li>
+                        <li>display</li>
+                    </ul>
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>css布局小技巧</legend>
+            <ul>
+                <li>使用 Flexbox 实现灵活布局:父元素display:flex
+                    <ul>
+                        <li>快速居中</li>
+                        <p>使用display: flex;和justify-content: center; align-items: center;
+                            可以轻松将一个元素在其父容器中水平和垂直居中。</p>
+                        <li>等宽子元素</li>
+                        <p>设置flex: 1;可以让多个子元素在容器中平均分配宽度。</p>
+                    </ul>
+                </li>
+                <li>利用 Grid 布局构建复杂布局
+                    <li>创建网格区域：</li>
+                    <p>使用grid-template-areas属性可以创建一个网格区域，然后通过grid-area属性将元素放置在指定的网格区域中。</p>
+                    <a href="eg1.txt">示例</a>
+                    <li>对齐网格项</li>
+                    <p>使用justify-items和align-items属性可以控制网格项在网格容器中的对齐方式。</p>
+                    <a href="eg2.txt">示例</a>
+                </li>
+                <li>使用 CSS 变量简化样式</li><a href="eg3.txt">示例</a>
+                <li>响应式布局</li>
+                    <p>使用媒体查询（Media Queries）可以根据不同的设备宽度和屏幕尺寸来应用不同的样式。</p>
+                    <p>弹性单位（如 rem 和 em）</p>
+                <li>清除浮动</li>
+                    <p>使用clearfix类<code> .clearfix::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                      }</code></p>
+                    <p>使用overflow属性<code>   .parent {
+                        overflow: auto;
+                      }</code></p>                
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>元素之间的空白问题</legend>
+            <li>行内元素</li><a href="eg4.txt">code</a><br>
+            <span style="background-color: #FF0000;">Element 1</span>
+            <span style="background-color: blue;">Element 2</span><br>
+            <span style="background-color: #FF0000;">Element 1</span><span style="background-color: blue;">Element 2</span>
+            <li>块级元素的空白问题</li>
+            <p>删除元素之间的换行符 / 使用 CSS 重置</p>
+            <div style="background-color: #FF0000;">Element 1</div>
+            <div style="background-color: blue;">Element 2</div>
+            <li>行内块的幽灵空白问题</li>
+            <a href="eg5.txt">code</a>
+            <div>
+                <div class="inline-block-element"></div>
+                <div class="inline-block-element"></div>
+            </div>
+            <div>
+                <div class="inline-block-element"></div><div class="inline-block-element"></div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>浮动 float</legend>
+            <ul>
+                <li>作用</li>
+                <p>实现文本环绕效果：当一个元素设置了浮动属性后，它会脱离文档流，并且可以让其他元素（通常是文本）围绕它排列。</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="float-element"></span> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p><br><br><br><br><br>
+                <p>实现多列布局：通过将多个元素设置为浮动，可以创建多列布局效果。</p>
+                <div class="column" style="border: solid;">Column 1</div>
+                <div class="column" style="border: solid;">Column 2</div>
+                <div class="column" style="border: solid;">Column 3</div>
+                <br><br>
+                <br><br><br>
+                <li>清除浮动</li>
+                <a href="eg6.html">示例</a>
+                <li>浮动的特点</li>
+                    <ol>
+                        <li>脱离文档流</li>
+                        <p>浮动元素会脱离正常的文档流，这意味着它不再占据文档流中的空间，其他元素会无视它的存在进行布局。<br>
+                            例如，如果一个浮动元素在一个没有设置浮动的块级元素内部，这个块级元素的高度将不会包含浮动元素，除非采取特殊的措施来清除浮动。</p>
+                        <li>依次排列</li>
+                        <p>
+                            多个浮动元素会按照它们在 HTML 中的顺序依次排列，如果空间不足，浮动元素会自动换行。
+                        </p>
+                    </ol>
+                <li>影响</li>
+                    <ol>
+                        <li>父元素高度塌陷</li>
+                        <p>如果一个父元素包含浮动元素，而这个父元素没有设置高度，那么它的高度将变为0，导致父元素无法显示内容。</p>
+                        <li>文本环绕</li>
+                        <p>如果一个元素设置了浮动，那么它会脱离文档流，导致其他元素会环绕它。</p>
+                        <li>相邻元素布局改变</li>
+                        <p>相邻的浮动元素会相互影响布局。如果两个浮动元素宽度之和超过容器宽度，后面的元素会自动换行。<br>
+                            未浮动的块级元素在遇到浮动元素时，其布局可能会受到干扰，可能会出现重叠或奇怪的间距问题。</p>
+                        <li>脱离文档流</li>
+                        <p>浮动元素会脱离文档流，这意味着它们不再占据文档流中的空间，其他元素会无视它们的存在进行布局。</p>
+                        <li>按指定方向排列</li>
+                        <p>多个浮动元素会按照它们在 HTML 中的顺序依次排列，如果空间不足，浮动元素会自动换行。</p>
+                    </ol>
+                <li>清除影响</li>
+                    <ol>
+                        <li>使用clearfix类</li>
+                        <p>使用clearfix类可以清除浮动元素对父元素的影响。
+                            <code>    .clearfix {
+                                clear: both;
+                              }</code>
+                        </p>
+                        <li>使用overflow属性</li>
+                        <p>将父元素的overflow属性设置为auto、hidden或scroll，可以清除浮动元素对父元素的影响。</p>    
+            </ul>
+            <a href="ex1.html" style="border: solid 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;"><strong>练习1</strong></a>
+            <a href="ex2.html" style="border: solid 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;"><strong>练习2</strong></a>
+        </fieldset>
+
+        <fieldset>
+            <legend>定位 position</legend>
+            <ul>
+                <li>static</li>
+                <li>relative</li>
+                <p>
+                    相对定位的元素是相对于它在正常文档流中的位置进行定位。<br>
+                    使用top、bottom、left和right属性来指定元素相对于其原始位置的偏移量。
+                </p>
+                <div class="relative-element"
+                style=" position: relative;
+                top: 5px;
+                left: 10px;
+                background-color: lightblue;width: 30px;"
+                
+                > 相对定位 </div>
+                <li>absolute</li>
+                <p>绝对定位的元素是相对于其最近的已定位祖先元素进行定位。
+                    如果没有已定位的祖先元素，则相对于文档的初始包含块（通常是 &lt;html&gt; 元素）进行定位。</p>
+                <p>
+                    元素脱离正常文档流，不占据文档流中的空间，其他元素会忽略它的存在进行布局。<br>
+                        同样使用top、bottom、left和right属性来指定元素的位置。
+                </p>
+                <div id="absolute-element" style="position: absolute;width: 68px;
+                    top: 25px;
+                    left: 10px;
+                    background-color: pink;">绝对定位</div>
+                    <!-- <a href="#absolute-element">绝对定位</a> -->
+                    <li>fixed</li>
+                    <p>
+                        固定定位的元素是相对于浏览器窗口进行定位。<br>
+                        元素脱离正常文档流，无论页面如何滚动，固定定位的元素始终保持在屏幕上的相同位置。<br>
+                        使用top、bottom、left和right属性来指定元素相对于浏览器窗口的位置。
+                    </p>
+                <li>sticky</li>
+                <p>
+                    初始状态：在页面滚动时，粘性定位的元素在其原始位置上表现得像相对定位的元素，随着页面一起滚动。<br>
+                    触发条件：当满足特定的滚动条件时，粘性定位的元素会切换为固定定位，停留在页面的特定位置。<br>
+                    依赖关系：粘性定位的元素通常依赖于其父元素的边界来确定其位置。例如，可以设置一个元素在其父元素的顶部或底部保持粘性。
+                </p>
+
+
+            </ul>
+            
+        </fieldset>
+
+        <!-- 导航 -->
+        <div class="fixed-element">
+             <div class="navbar" style="line-height: 10px;">
+                <input class="switch" type="checkbox">
+                <a href="./resume.html">简历</a>
+                <div style="margin: 5px;padding: 3px;font-size: 11px;">
+                    <p><a href="#section1"><h3>TOP</h3></a></p>
+                    <p><a href="#footer"><h3>footer</h3></a></p>
+                    <p><a href="#h5"><h3>html5</h3></a></p>
+                    <p><a href="#new-tap">新增标签</a></p>
+                    <p><a href="#css3"><h3>css3</h3></a></p>
+                    <p><a href="#new-long">新增长度</a></p>
+                    <p><a href="#new-boxelm">新增盒子属性</a></p>
+                    <p><a href="#new-bgelm">新增背景属性</a></p>
+                    <p><a href="#new-borelm">新增边框属性</a></p>
+                    <p><a href="#new-textelm">新增文本属性</a></p>
+                    <p><a href="#new-gra">新增渐变</a></p>
+                    <p><a href="#new-font">新增web字体</a></p>
+                    <p><a href="#2d">2d变换</a></p>
+                    <p><a href="#3d">3d变换</a></p>
+                    <p><a href="#new-trans">过渡</a></p>
+                    <p><a href="#new-anima">动画</a></p>
+                    <p><a href="#res-layout">响应式布局</a></p>
+                    <p><a href="#bfc">BFC</a></p>
+                    <p><a href="#flex-box">flex</a></p>
+
+                </div>
+       </div>
+       
+        </div>
+            <div class="sticky-element" style="position: sticky;
+                border-radius: 15px;
+                top: 10px;
+                background-color: rgba(173, 216, 230, 0.317);">
+                This is a sticky element.
+            </div>
+
+        <fieldset>
+            <legend>布局</legend>
+            <ul>
+                <li>版心</li>
+                <p>
+                    版心（Center）是指网页内容的主要区域，通常位于网页的中央位置。<br>
+                    它是网页内容的主要展示区域，用于展示网页的主要内容和信息。
+                </p>
+                <a href="eg7.html">示例</a>
+                <li>常用类名</li>
+
+                <li>重置默认样式</li>
+                <p>
+                    重置默认样式可以通过使用CSS重置框架或自定义CSS样式来实现。<br>
+
+                    常用的CSS重置框架有Normalize.css和Reset.css。<br>
+                    自定义CSS样式可以根据具体需求进行调整，例如设置默认的字体、颜色、边框等。<br>
+                                        <!-- <code>     * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }<br>
+                 
+                      a {
+                        text-decoration: none;
+                        color: inherit;
+                      } <br>
+                 
+                      img {
+                        max-width: 100%;
+                        height: auto;
+                      }</code><br> -->
+                </p>
+            </ul>
+                                    <h2>CSS 类名分类</h2>
+
+                        <h3>布局相关类名：</h3>
+                        <ul>
+                        <li>.container或.wrapper：通常用于表示页面的主要容器，包含版心内容。</li>
+                        <li>.row：在使用网格布局时表示一行。</li>
+                        <li>.col：在使用网格布局时表示一列。</li>
+                        <li>.sidebar：表示侧边栏。</li>
+                        <li>.content：表示主要内容区域。</li>
+                        </ul>
+                    
+                        <h3>状态相关类名：</h3>
+                        <ul>
+                        <li>.active：表示当前处于激活状态的元素，例如当前选中的菜单选项。</li>
+                        <li>.hidden：用于控制元素的隐藏状态。</li>
+                        <li>.show：用于控制元素的显示状态。</li>
+                        <li>.disabled：表示禁用的元素，例如禁用的按钮。</li>
+                        </ul>
+                    
+                        <h3>功能相关类名：</h3>
+                        <ul>
+                        <li>.clearfix：用于清除浮动，通常应用于包含浮动元素的容器。</li>
+                        <li>.text-center：用于将文本居中对齐。</li>
+                        <li>.img-responsive：用于使图像响应式，即根据容器自动调整大小。</li>
+                        </ul>
+        </fieldset>
+
+    <h1 id="h5">HTML5</h1>
+
+        <fieldset>
+            <legend>简介</legend>
+            <ol>
+                <li>语义化标签：</li>
+                    HTML5 引入了一系列语义化标签,
+                    如<span style="color:rgb(30, 30, 228);">
+                        header（页眉）、nav（导航栏）、section（章节）、article（文章）、aside（侧边栏）和footer（页脚）</span>等。
+                    这些标签使网页的结构更加清晰，便于开发者编写易于理解和维护的代码，同时也有利于搜索引擎优化（SEO）。
+                <li>多媒体支持</li>
+                HTML5 提供了原生的多媒体支持，无需依赖第三方插件（如 Flash）即可播放音频和视频。<br>
+                <strong style="font-size: large; color: #007bff;">&lt;audio&gt;</strong>和<strong style="font-size: large; 
+                color: #007bff;">&lt;video&gt;</strong>标签允许开发者轻松地在网页中嵌入音频和视频文件，并提供了一系列控制属性，如播放、暂停、音量调节等。
+                <div> 
+                    <video controls>
+                    <source src="MomoWallpaper.mp4" type="video/mp4" ">
+                    Your browser does not support the video tag.
+                  </video><br>
+                  <audio  style="size: 30px;">
+                    <source src="testMusic.ogg" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+                </div>   
+                <li>图形与绘图</li>
+                HTML5 引入了 &lt;canvas&gt; 元素，允许开发者通过 JavaScript 绘制图形和动画。<br>
+                开发者可以使用 JavaScript 来操作 &lt;canvas&gt; 元素，实现各种绘图效果，如绘制图形、绘制图表、绘制动画等。<br>
+                <a href="canvas.html"></a>
+                <canvas id="myCanvas" width="100%" height="100"></canvas>
+            <li>本地存储：</li>
+            HTML5 引入了本地存储（Local Storage）和会话存储（Session Storage），允许网页在用户的浏览器中存储数据。<br>
+            本地存储的数据在浏览器关闭后仍然存在，而会话存储的数据在浏览器关闭时会被清除。
+                <br><code style="font-size: 8px;">
+                    // 存储数据到本地存储<br>
+                    localStorage.setItem('key', 'value');<br>
+                    // 从本地存储获取数据<br>
+                    var value = localStorage.getItem('key');<br>
+                    // 移除本地存储中的数据<br>
+                    localStorage.removeItem('key');
+                </code>
+            <li>表单增强：</li>
+            HTML5 对表单进行了大量的增强，
+            包括新的输入类型（如email、url、number、date等）、表单验证属性（如required、pattern等）和自动完成功能。
+            这些增强使得表单的创建更加容易，同时也提高了用户体验和数据的准确性。
+            <form style="width: 40vw;">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <br>
+                <label for="url">URL:</label><br>
+                <input type="url" id="url">
+
+                <label for="number">Number:</label>
+                <input type="number" id="number">
+
+                <input type="submit" value="Submit">
+            </form>
+            </ol>
+        </fieldset>
+
+        <fieldset id="new-tap">
+            <legend>新增标签</legend>
+            <ol>
+                <li>新增布局标签</li>
+                    &lt;header&gt;：定义文档的头部区域。<br>
+                    &lt;nav&gt;：定义导航链接。<br>
+                    &lt;section&gt;：定义文档的一个区域。<br>
+                    &lt;article&gt;：定义一个独立的内容区域。<br>
+                    &lt;aside&gt;：定义与内容相关的侧边栏。<br>
+                    &lt;footer&gt;：定义文档的底部区域。<br>
+                    ...
+                <li>新增状态标签</li>
+                    表单输入状态：<br>
+                    required属性：<br>
+                    用于指定表单输入字段为必填项。当用户提交表单时，如果必填字段为空，浏览器会显示错误提示。
+                    <input type="text" name="username" required>
+                    pattern属性：<br>
+                    可以指定一个正则表达式，用于验证表单输入的格式。如果输入不匹配指定的模式，浏览器会显示错误提示。
+                    <input type="text" name="phone" pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+                    进度和状态表示<br>
+                    progress标签：<br>
+                    用于表示任务的进度。可以设置value属性表示当前进度值，max属性表示最大进度值。<br>
+                    <progress value="67" max="100" style="width: 40vw;"></progress><br>
+                    meter标签：<br>
+                    用于表示在一定范围内的数量值。可以设置value属性表示当前值，min和max属性表示范围的最小值和最大值。<br>
+                    <meter value="75" min="0" max="100"></meter>
+                    <input list="colors" />
+                <li>新增列表标签</li>
+                    datalist标签：<br>
+                    用于定义一个预定义的选项列表。可以通过list属性与input元素关联，实现自动补全功能。<br>
+                    <input list="colors" />
+                    <datalist id="colors">
+                        <option value="Red">
+                        <option value="Blue">
+                        <option value="Green">
+                        <option value="Yellow">
+                      </datalist><br>
+                    optgroup标签：<br>
+                    在select下拉列表中，可以使用optgroup标签对选项进行分组，使列表更加清晰和易于理解。<br>
+                    <select style="width: 100px;">
+                        <optgroup label="Fruits">
+                          <option value="apple">Apple</option>
+                          <option value="banana">Banana</option>
+                        </optgroup>
+                        <optgroup label="Vegetables">
+                          <option value="carrot">Carrot</option>
+                          <option value="broccoli">Broccoli</option>
+                        </optgroup>
+                    </select>
+                <li>新增文本标签</li>
+            </ol>
+            
+        </fieldset>
+
+    <h1 id="css3" style="display: inline;">CSS3</h1><a href="https://developer.mozilla.org/zh-CN/" target="_blank">MDN</a>
+        
+        <fieldset>
+            <legend>css兼容性</legend>
+            <a href="http://caniuse.com">css兼容:caniuse.com</a>
+            <ol>
+                <li>浏览器前缀</li>
+                浏览器前缀是为了兼容不同浏览器的CSS属性和值。<br>
+                例如，在CSS3中使用了新的属性transform，但是不同的浏览器对这个属性的支持程度不同，<br>
+                所以需要在不同的浏览器中添加相应的前缀，以确保在不同的浏览器中都能正常显示。<br>
+
+                例如，在Chrome浏览器中使用transform属性，需要添加前缀-webkit-，<br>
+                而在Firefox浏览器中使用transform属性，需要添加前缀-moz-。<br>
+                <code>
+                   .box {<br>
+                        -webkit-transform: rotate(45deg);<br>
+                        -moz-transform: rotate(45deg);<br>
+                        transform: rotate(45deg);<br>
+                    }<br>
+                </code>
+                <li>浏览器版本</li>
+                不同的浏览器版本可能对CSS3属性的支持程度不同，<br>
+                因此在使用CSS3属性时，需要注意浏览器版本的兼容性。<br>
+                例如，在CSS3中使用了新的属性transform，但是在某些旧版本的浏览器中可能不支持，<br>
+                所以需要在使用时进行兼容性处理。<br>
+
+                例如，在使用transform属性时，可以使用CSS3的@supports规则来判断浏览器是否支持该属性，<br>
+                如果支持，则使用该属性，否则使用其他属性或不使用该属性。<br>
+                <code>
+                    @supports (transform: rotate(45deg)) {<br>
+                       .box {<br>
+                        transform: rotate(45deg);<br>
+                    }<br>
+                    }<br>
+                </code>
+
+                <li>常见浏览器前缀</li>
+                常见的浏览器前缀有：<br>
+                -webkit-：用于Chrome、Safari等浏览器<br>
+                -moz-：用于Firefox浏览器<br>
+                -o-：用于Opera浏览器<br>
+                -ms-：用于IE浏览器<br>
+                例如，在使用transform属性时，可以使用以下代码来兼容不同的浏览器：<br>
+                <code>
+                   .box {<br>
+                        -webkit-transform: rotate(45deg);<br>
+                        -moz-transform: rotate(45deg);<br>
+                        -o-transform: rotate(45deg);<br>
+                        transform: rotate(45deg);<br>
+                    }<br>
+                </code>
+
+            </ol>
+        </fieldset>
+
+        <fieldset id="new-long">
+            <legend>css3新增长度单位</legend>
+            <ol>
+                <li>vw</li>
+                vw是相对于视口宽度的单位，1vw等于视口宽度的1%。<br>
+                例如，在视口宽度为1000px的情况下，10vw等于100px。<br>
+                <li>vh</li>
+                vh是相对于视口高度的单位，1vh等于视口高度的1%。<br>
+                例如，在视口高度为800px的情况下，10vh等于80px。<br>
+                <li>vmin</li>
+                vmin是相对于视口宽度和视口高度中较小的那个值的单位，1vmin等于视口宽度和视口高度中较小的那个值的1%。<br>
+                例如，在视口宽度为1000px，视口高度为800px的情况下，10vmin等于80px。<br>
+                <li>vmax</li>
+                vmax是相对于视口宽度和视口高度中较大的那个值的单位，1vmax等于视口宽度和视口高度中较大的那个值的1%。<br>
+                例如，在视口宽度为1000px，视口高度为800px的情况下，10vmax等于100px。<br>
+                <li>rem</li>
+                rem是相对于根元素字体大小的单位，1rem等于根元素字体大小。<br>
+                例如，在根元素字体大小为16px的情况下，1rem等于16px。<br>
+                <li>em</li>
+                em是相对于父元素字体大小的单位，1em等于父元素字体大小。<br>
+                例如，在父元素字体大小为16px的情况下，1em等于16px。<br>
+            </ol>
+        </fieldset>
+
+        <fieldset id="new-boxelm">
+            <legend>新增盒子属性</legend>
+            <ol>
+                <li>border-radius</li>
+                border-radius属性可以用来设置元素的圆角边框。<br>
+                例如，border-radius: 50%可以将元素的边框变成圆形。<br>
+                <div style="height: 100px; width: 100px; background-color: skyblue; border-radius: 50%;"></div>
+                例如，border-radius: 10px可以将元素的边框圆角。<br>
+                <div style="height: 100px; width: 100px; background-color: skyblue; border-radius: 10px;"></div>
+                <li>box-shadow</li>
+                box-shadow属性可以用来为元素添加阴影效果。<br>
+                例如，box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)可以为元素添加一个阴影效果。<br>
+                box-shadow: 水平偏移量 垂直偏移量 模糊半径 阴影外延度 阴影颜色 阴影向内或向外。<br>
+                <div class="shadow"></div>
+                <li>box-sizing</li>
+                box-sizing属性可以用来控制元素的盒子模型。<br>
+                例如，box-sizing: border-box可以让元素的宽度和高度包括边框和内边距。<br>
+                <p>
+                    1)当box-sizing: content-box时，元素的宽度和高度只包括内容，不包括内边距和边框。<br>
+                    2)当box-sizing: border-box时，元素的宽度和高度包括内边距和边框，不包括内容。<br>
+                </p>
+                <div style="overflow: hidden;">
+                       <div style="padding: 5px; margin: 5px; border: 5px black solid; height: 100px; width: 100px; background-color: #007bff;float: left;">
+                    content-box
+                </div>
+                <div style="box-sizing: border-box; padding: 5px; margin: 5px; border: 5px black solid; height: 100px; width: 100px; background-color: #ca2039;float: left;">
+                    border-box
+                </div>
+                </div>
+             
+                <li>opacity</li>
+                opacity属性可以用来设置元素的透明度。<br>
+                例如，opacity: 0.5可以将元素的透明度设置为50%。<br>
+                <div class='opacity' style="font-weight: bold;">opacity</div>
+
+            </ol>
+        </fieldset>
+
+        <fieldset id="new-bgelm">
+            <legend>新增背景属性</legend>
+            <ol>
+                <li>background-origin</li>
+                <p>设置背景图的原点 <br>
+                    content-box、padding-box、border-box</p>
+                <div class="origin" style="width: 50vw;height: 50vw;background: skyblue;border: 5px dashed rgba(143, 143, 231, 0.5);
+                padding: 5px;margin: 0 atuo;font-size: 1em;
+                background-image: url(./02.png);
+                background-origin: content-box;/* 背景图片相对于内容 */
+                /* background-origin: padding-box;背景图片相对于内边距 默认 */
+                /* background-origin: border-box;背景图片相对于边框 */
+                background-repeat: no-repeat;
+                ">background-origin background</div>
+
+                <li>background-clip</li>
+                <p>/* 确定背景的绘制区域。<br>
+                    padding-box、border-box、content-box、text(文字透明)*/</p>
+                <div class="origin" style="width: 50vw;height: 50vw;background: skyblue;border: 5px dashed rgba(143, 143, 231, 0.5);
+                padding: 5px;margin: 0 atuo;font-size: 1em;font-weight: bolder;color: transparent;
+                background-image: url(./01.png);
+                background-repeat: no-repeat;
+                background-origin: border-box;
+                background-clip: text;
+                /* padding-box、border-box、content-box、text(文字透明)*/
+                ">风筝在阴天搁浅,想念。</div>
+
+                <li><strong>*background-size</strong></li>
+                <p>/* 背景图片的大小。<br>
+                    1) 长度值：设置背景图片的宽度和高度。<br>
+                    2) 百分比值：设置背景图片的宽度和高度相对于容器的百分比。<br>
+                    3) cover：背景图片完全覆盖容器，可能会裁剪部分。尽可能完全展示<br>
+                    4) contain：背景图片完全包含在容器中，可能会有空白。<br>
+                    5) auto：保持背景图片的原始尺寸。<br>
+                    6) 多个值：设置背景图片的宽度和高度。<br>
+                    7) 关键字：auto、cover、contain。<br>
+                */</p>
+                <div class="origin" style="width: 50vw;height: 50vw;background: skyblue;border:1px solid black;
+                font-size: 50px;font-weight: bolder;
+                background-image: url(./01.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                "></div>
+
+                <li>background-复合属性</li>
+                <p>/* 背景属性的复合写法。<br>
+                    1) 背景颜色<br>
+                    2) 背景图片<br>
+                    3) 背景重复方式<br>
+                    4) 背景位置<br>
+                    /
+                    5) 背景大小<br>
+                    6) 背景原点<br>
+                    7) 背景裁剪<br>
+                    <code>
+                        background: skyblue url(./01.png) no-repeat 0 0 / cover border-box content-box;
+                    </code>
+                */</p>
+                <div class="origin" style="width: 50vw;height: 50vw;border:1px solid black;
+                font-size: 50px;font-weight: bolder;
+                background: skyblue url(./01.png) no-repeat 0 0 / cover border-box content-box;
+                "></div>
+
+                <li>多背景图</li>
+                <p>/* 多背景图。<br>
+                    1) 多个背景图片，用逗号分隔。<br>
+                    2) 多个背景位置，用逗号分隔。<br>
+                    3) 多个背景大小，用逗号分隔。<br>
+                    4) 多个背景重复方式，用逗号分隔。<br>
+                    5) 多个背景原点，用逗号分隔。<br>
+                    6) 多个背景裁剪，用逗号分隔。<br>
+                */</p>
+                <code>
+                    background: <br>
+                            url(./03.png) no-repeat,<br>
+                            url(./03.png) no-repeat right 10px,<br>
+                            url(./03.png) no-repeat right bottom,<br>
+                            url(./03.png) no-repeat 10px center;<br>
+                </code>
+                <div class="origin" style="width: 50vw;height: 50vw;border:1px solid black;
+                font-size: 50px;font-weight: bolder;
+                background: url(./03.png) no-repeat,
+                            url(./03.png) no-repeat right 10px,
+                            url(./03.png) no-repeat right bottom,
+                            url(./03.png) no-repeat 10px center;
+                "></div>
+
+            </ol>
+        </fieldset>
+
+        <fieldset id="new-borelm">
+            <legend>边框新增属性</legend>
+            <ol>
+                <li>border-radius</li>
+                radius:值为圆角的园的半径，百分比为容器的百分比。最多为容器宽高的一半。<br>
+                可以分别设置四个角的半径，如 border-top-left-radius、border-top-right-radius、border-bottom-right-radius、border-bottom-left-radius。<br>
+                也可以使用缩写形式，如 border-radius: 10px;（四个角都是 10px 的圆角）或者 border-radius: 10px 20px;（左上角和右下角为 10px，右上角和左下角为 20px）等。
+                <div style="overflow: hidden;">
+                    <div style="width: 10vw;height:10vw;border: 2px solid;border-radius: 5%; float: left; margin: 5px;text-align: center;" >5%</div>
+                    <div style="width: 10vw;height:10vw;border: 2px solid;border-radius: 25%; float: left; margin: 5px;text-align: center;" >25%</div>
+                    <div style="width: 10vw;height:10vw;border: 2px solid;border-radius: 50%; float: left; margin: 5px;text-align: center;" >50%</div>
+                    <div style="width: 10vw;height:10vw;border: 10px solid;border-radius: 60%; float: left; margin: 5px;text-align: center;" >60%</div>
+                </div>
+                <div class="radius" style="text-align: center;">0%-50%</div>
+
+            </ol>
+        </fieldset>
+
+        <fieldset id="new-textelm">
+            <legend>新增文本属性</legend>
+            <ol>
+                <li>text-shadow</li>
+                <p>text-shadow: 水平偏移量 垂直偏移量 模糊半径 阴影颜色;与box-shadow类似</p>
+                <span class="text-shadow">text-shadow</span>
+                <li>文本换行</li>
+                <p>
+                    1) 单词换行：word-wrap: break-word;<br>
+                    2) 字符换行：white-space: normal/pre-line/pre/pre-wrap/*nowrap(配合溢出);<br>
+                    3) 自动换行：word-break: break-all;<br>
+                </p>
+                white-space: 
+                <div class="text-wrap" style="
+                width: 10vw;
+                height: 10vw;
+                border: 1px solid black;
+                overflow: hidden;
+                white-space: pre-line;
+                ">噫嘘唏，危乎高栽!
+                    蜀道难，难于上青天。
+                    青江何去，何从三洲。
+                    上有天堂，下有地狱。
+                </div>
+
+                <li>文本溢出</li>
+                <p style="width: 20vw;">
+                    1) 文本溢出：text-overflow: clip/ellipsis/string;<br>
+                        注意：需overflow:hidden;<br>
+                        white-space:nowrap;<br>
+                </p>
+                <div >
+                    <ul class="ulli" style="width: 10vw; height: 10vw;
+                        white-space:nowrap;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        border: 2px solid black;">
+                        <li>天若有情天亦老，人间正道是沧桑</li>
+                        <li>天若有情天亦老，人间正道是沧桑</li>
+                        <li>天若有情天亦老，人间正道是沧桑</li>
+                    </ul>
+                </div>
+
+                <li>文本修饰</li>
+                <p>
+                    1) 文本修饰：text-decoration: none/ underline/ overline/ line-through;<br>
+                    2) 文本修饰：text-decoration-line: none/ underline/ overline/ line-through;<br>
+                    3) 文本修饰：text-decoration-style: none/ solid/ dotted/ dashed/ double;<br>
+                    4) 文本修饰：text-decoration-color: color;<br>
+                </p>
+                <p style="text-decoration: underline; font-size: 10px;" >text-decoration下划线</p>
+                <p style="text-decoration-line: overline;text-decoration-style: dashed;font-size: 10px;">text-decoration上划线</p>
+                <p style="text-decoration: line-through;text-decoration-color: aqua;font-size: 10px;">text-decoration划线</p>
+                <p style="text-decoration: underline dashed blue;font-size: 10px;">text-decoration</p>
+
+                <li>文本描边</li>
+                <p>text-stroke 没啥用 可做空心文字
+                </p>
+                <h2 style="-webkit-text-stroke: 2px black;color: transparent;">text-stroke</h2>
+            </ol>
+        </fieldset>
+        
+        <fieldset id="new-gra">
+            <legend>新增渐变</legend>
+            <ol>
+                <li>线性渐变</li>
+                linear-gradient()
+                <div class="box0">
+                    <div class="box box1" >默认情况，从上到下</div>
+                    <div class="box box2">to right 从左往右</div>
+                    <div class="box box3">to left 从右往左</div>
+                    <div class="box box4">to buttom 从上往下</div>
+                    <div class="box box5">to top 从下往上</div>
+                    <div class="box box6">to top right 从左下往右上</div>
+                    <div class="box box7">0-360deg 顺时针 从底部开始</div>
+                    <div class="box box8">调整渐变区域</div>
+                </div>
+
+                <li>径向渐变</li>
+                radial-gradient
+                    <div class="box00">
+                        <div class="box box01">默认</div>
+                        <div class="box box02">通过关键词调整圆心 at left top</div>
+                        <div class="box box03">通过像素值调整圆心</div>
+                        <div class="box box04">设置长短半径，100px 50px</div>
+                        <div class="box box05">关键字circle</div>
+                        <div class="box box06">渐变区域</div>
+                        <div class="box box07">复合属性 综合写法</div>
+                        <div class="box box08">炫酷文字 燚</div>
+                    </div>
+                
+                <li>重复渐变</li>
+                <p>在没有发生渐变的区域，重新开始渐变,要指定区域</p>
+                <div class="box000">
+                    <div class="box box001">
+                        <div style="margin:0 auto;border: 1px solid; width: 6vw;height: 6vw; border-radius: 50%;"></div>
+                    </div>
+                    <div class="box box002">重复渐变</div>
+                    <div class="box box003"></div>
+                </div>
+                <li>角度渐变</li>
+                <li>多色渐变</li>
+            </ol>
+            
+        </fieldset>
+
+        <fieldset id="new-font">
+            <legend>web字体</legend>
+            <ol>
+                <li>web字体</li>
+                <p>
+                    1) @font-face 定义字体<br>
+                    在线定制字体网站<br>
+                    &nbsp;&nbsp;@font-face {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: '字体名称';<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src: url('字体文件路径');<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight: 字体粗细;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-style: 字体样式;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    2) font-family 定义字体名称<br>
+                    3) src 定义字体文件路径<br>
+                    4) font-weight 定义字体粗细<br>
+                    5) font-style 定义字体样式<br>
+                </p>
+                <div style="font-family: 'myfont';">
+                    <h2>我允许你走进我的世界,<br>但不许你在我的世界里走来走去。</h2>
+
+                    <li>font-icon 字体图标</li>
+                    阿里图标库：<a href="http://www.iconfont.cn">font-icon</a><br>
+                    <svg style="width: 10px;height: 10px;" aria-hidden="true">
+                        <use xlink:href="#icon-lake__easyiconnet"></use>
+                    </svg>
+                    <svg style="width: 30px;height: 30px;" aria-hidden="true">
+                        <use xlink:href="#icon-food-pizza"></use>
+                    </svg>
+                    <svg style="width: 60px;height: 60px;" aria-hidden="true">
+                        <use xlink:href="#icon-food-strawberry"></use>
+                    </svg>
+                    <svg style="width: 100px;height: 100px;" aria-hidden="true">
+                        <use xlink:href="#icon-food-pistachio"></use>
+                    </svg>
+                </div>
+                
+            </ol>
+        </fieldset>
+
+        <fieldset id="2d">
+            <legend>2D变换</legend>
+            <ol>
+                <li>translate 位移</li>
+                <div class="box-transform">
+                    <div class="translate-1">1</div>
+                    <div class="translate-2">2</div>
+                </div>
+                <li>rotate 旋转</li>
+                <p>单位deg；绕z轴旋转</p>
+                <div class="box-transform">
+                    <div class="rotate-1">1</div>
+                    <div class="rotate-2">2</div>
+                </div>
+                <li>scale 缩放</li>
+                <p>0&lt;x&lt;1则缩小,&gt;>1则放大，小于0镜像</p>
+                    <div class="box-transform">
+                        <div class="scale-1">X 缩 1</div>
+                        <div class="scale-2">Y 放 2</div>
+                        <div class="scale-3">镜像</div>
+                    </div>
+                <li>skew 扭曲(了解)</li>
+                <p>单位deg；沿x轴倾斜</p>
+                <div class="box-transform">
+                    <div class="skew-1">X 扭曲 1</div>
+                    <div class="skew-2">Y 扭曲 2</div>
+                </div>
+                <li>matrix</li>
+                <li>多重变换</li>
+                <p>综合变换：位移，缩放，旋转</p>
+                <div class="box-transform">
+                    <div class="matrix-2">
+                        <div class="matrix-1">位移 旋转 缩放</div>
+                    </div>
+                </div>
+                <li>变换原点</li>
+                <p>transform-origin: x y z;关键词 top left...
+                    <br>x:水平偏移量，y:垂直偏移量，z:z轴偏移量
+                </p>
+            </ol>
+        </fieldset>    
+        
+        <fieldset id="3d">
+            <legend>3D变换</legend>
+            <ol>
+                <li>3D空间与景深</li>
+                <div>
+                    <div class="box3d">
+                        <div class="father" style="border: 1px solid;width: 10vw;">
+                            <div class="son" style="width: 10vw;height: 10vw;
+                            background-color: #00ff008c;
+                            border: 1px solid;">
+                            </div>
+                        </div>
+                    <div class="box3d-1">1</div>
+                        <div class="box3d-2">
+                            围绕x轴旋转
+                        </div>    
+                    </div>
+                </div>
+                <li>透视点的位置</li>
+                <p>默认在开启了3d空间父元素的正中心<br>
+                    perspective-origin: X Y;
+                </p>
+                <li>translate3d 位移</li>
+                <div style="width: 10vw;height: 10vw;border: 1px solid;
+                            transform-style:preserve-3d;
+                            perspective: 500px;
+                            perspective-origin: 150% 150%;">
+                    <div class="trans-3d">
+                        z轴位移
+                    </div>
+                </div>
+                <li>rotate3d 旋转</li>
+                <p>rotateX*,<br>rotateY*,<br>rotate*,<br>rotate3d</p>
+                <div>
+                    <div style="width: 10vw;height: 10vw;border: 1px solid;
+                        transform-style:preserve-3d;
+                        perspective: 500px;
+                        ">
+                        <div class="rotate-3d">
+                        y轴旋转
+                        </div>
+                    </div>
+                </div>
+                <li>scale3d 缩放</li>
+                <p>scaleZ:相当于把景深拉远，拉近</p>
+                <p>scale-3d:(X Y Z)</p>
+                </p>
+                <div style="width: 10vw;height: 10vw;border: 1px solid;
+                transform-style:preserve-3d;
+                perspective: 500px;
+                ">
+                <div class="scale-3d">
+                z轴缩放,y轴旋转
+                </div>
+        </div>
+                <li>多重变换</li>
+                <p>旋转放最后</p>
+                <div>
+                    <div style="width: 10vw;height: 10vw;border: 1px solid;
+                        transform-style:preserve-3d;
+                        perspective: 500px;
+                        ">
+                        <div class="d3d">
+                        开门
+                        </div>
+                    </div>
+                </div>
+                <li>transform-style: preserve-3d; 保留3d/开启3d空间</li>
+                <li>transform-origin: X Y Z; 变换原点,观察点</li>
+                <li>背部可见性</li>
+                <p>backface-visibility: visible; 背面可见</p>
+                <p>backface-visibility: hidden; 背面不可见</p>
+                <div style="width: 10vw;height: 10vw;border: 1px solid;
+                transform-style:preserve-3d;
+                perspective: 500px;
+                ">
+                <div class="back-3d">
+                开门
+                </div>
+            </div>
+                </ol>
+        </fieldset>
+    
+        <fieldset id="new-trans">
+            <legend>过渡</legend>
+            <ol>
+                <li>基本使用</li>
+                    <p>* 属性的值必须与数字相关</p>
+                    <div class="trans" style="overflow: hidden;margin: 10px;border: 1px solid;">
+                        <div class="trans-1">
+                            过渡<br>
+                            过渡<br>
+                            过渡<br>
+                            过渡<br>
+                            过渡<br>
+                            过渡<br>
+                            过渡<br>
+                        </div>
+                    </div>       
+                <li>高级使用</li>      
+                <p>transition-timing-function;过渡的速度曲线</p> 
+                <p id="timifunc">ease平滑(快慢快)、linear线性(匀速)、ease-in慢快、ease-out快慢、step-start直终点、<br>
+                     step-end时间结束直达终点、steps(10) 分10份走完、
+                     <a id="cubic" href="https://cubic-bezier.com" target="_blank">cubic-bezier(abcd)贝塞尔曲线</a>
+                     </p>
+                    <div class="hi" style="font-size: 16px;">
+                        <div class="high hi1"></div>
+                        <div class="high hi2"></div>
+                        <div class="high hi3"></div>
+                        <div class="high hi4"></div>
+                        <div class="high hi5"></div>
+                        <div class="high hi6"></div>
+                        <div class="high hi7"></div>
+                        <div class="high hi8"></div>
+                    </div>
+                <li>复合使用</li>
+                <p>transition:时间 属性 延迟时间 速度曲线</p>
+                <li>小案例</li>
+                <div class="outer">
+                    <img src="https://img.picui.cn/free/2024/11/07/672c7a0000e11.png" alt="1"></img>
+                    <div class="mask">
+                        成都
+                    </div>
+                </div>
+            </ol>
+
+        </fieldset>
+    
+        <fieldset id="canvas">
+            <legend>动画</legend>
+            <ol>
+                <li>基本使用</li>
+                <div class="ani-out" style="height: 10vw;">
+                    <div class="ani-in"></div>
+                </div>
+                <li>其他属性</li>
+                animation-timing-function:<a href="#timifunc">同上</a><br>
+                animation-iteration-count: 动画执行次数: 数字 无限(infinite).<br>    
+                animation-direction: 动画方向 : 正向(normal) 反向(reverse) 交替(alternate).<br>
+                animation-play-state: 动画播放状态: 暂停(paused) 运行(running).<br>
+                animation-fill-mode: 动画结束后状态: 保持结束状态(forword) 回到初始状态(backwards) 回到结束状态(both).<br>
+                animation: 动画属性 动画时间 延迟时间 / 速度曲线 动画次数 动画方向 动画播放状态 动画结束后状态.<br>
+                <li>复合属性</li>
+
+            </ol>
+        </fieldset>
+
+        <fieldset id="res-layout">
+            <legend>响应式布局</legend>
+            <ol>
+                <li>*媒体查询</li>
+                <p>@media 媒体类型 and (媒体特性) {
+                    CSS-Code;
+                }</p>
+                <p>*媒体类型: <strong>all(所有设备) screen(电脑) print(打印机) </strong> speech(屏幕阅读器)
+                    projection(投影) tv(电视) handheld(手持设备) alltv(电视和手持设备) braille(盲人用) embossed(盲文打印机) projection(投影)</p>
+                <p>媒体特性: width(宽度) height(高度) device-width(设备宽度) device-height(设备高度) orientation(方向)</p>
+                <p>媒体查询可以嵌套</p>
+                <li>响应式布局</li>
+                <p>媒体查询+弹性布局</p>
+                <li>*运算符</li>
+                <p style="color: #0000ff;">and(与) or(或) not(非)</p>
+                <li>常用阈值 width</li>
+                <p>480px 手机<br>
+                    768px 平板<br>
+                    992px 小屏电脑<br>
+                    1200px 大屏电脑<br>
+                    1400px 超大屏电脑<br>
+                </p>
+
+            </ol>
+            <div>
+                <div class="media-box">
+                    666
+                </div>                
+            </div>
+
+
+        </fieldset>
+
+        <h1  id="bfc">BFC</h1>
+        <p>BFC(Block Formatting Context) 块级格式化上下文</p>
+            <div style="width: 30vw; background: gray;border: 2px solid;overflow: auto;">
+                <div class="box-bfc" style="height: 10vw;width: 10vw;background: red; margin: 10px; float: left;">1</div>
+                <div class="box-bfc" style="height: 10vw;width: 10vw;background: rgb(9, 205, 48); margin: 10px;float: left;">2</div>
+                <div class="box-bfc" style="height: 10vw;width: 10vw;background: rgb(64, 66, 199); margin: 10px;float: left;">3</div>
+            </div>
+        <ol style="line-height: 3px;">
+            <li>解决了什么问题?</li>
+            <p>1. 解决了浮动元素与父元素重叠的问题;</p><br>
+            <p>2. 解决了margin重叠的问题;</p><br>
+            <p>3. 解决了高度塌陷的问题。</p><br>
+            <li>如何开启BFC?</li>
+            <p>1. 浮动元素;</p><br>
+            <p>2. 绝对定位元素;</p><br>
+            <p>3. 行内块元素;</p><br>
+            <p>4. 表格元素;</p><br>
+            <p>5. overflow不为visible;</p><br>
+            <p>6. display为inline-block;</p><br>
+            <p>7. display为flex;</p><br>
+            <p>8. display为inline-flex;</p><br>
+            <p>9. display为grid;</p><br>
+            <p>10. display为inline-grid;</p><br>
+            <p>11. display为flow-root;</p><br>
+            <p>12. display为contents;</p><br>
+            <p>13. display为flow-root;</p><br>
+        </ol>
+
+        <fieldset id="flex-box">
+            <legend>flex 伸缩盒模型</legend>
+            <ol>
+                <li>display:flex</li>
+                <p>flex-warp: nowarp(默认)/warp 换行与否 <br>
+                    wrpa-reverse(反向换行) <br>
+                    flex-direction: row(默认) column(列) 主轴方向<br>
+                </p>
+            
+               <div class="fl0">
+                    <div class="fl fle1">1</div>
+                    <div class="fl fle2">2</div>
+                    <div class="fl fle3">3</div>
+                    <div class="fl fle3">4</div>
+                    <div class="fl fle3">5</div>
+                    <div class="fl fle3">6</div>
+                    <div class="fl fle3">7</div>
+                    <div class="fl fle3">8</div>
+                    <div class="fl fle3">9</div>
+                    <div class="fl fle3">10</div>
+                    <div class="fl fle3">11</div>
+                    <div class="fl fle3">12</div>
+                    <div class="fl fle3">13</div>
+                    <div class="fl fle3">14</div>
+                    <div class="fl fle3">15</div>
+
+               </div>
+               <li>felx-flow:主轴方向 换行方式(不推荐)</li>
+               <li>主轴对齐方式</li>
+               <p>
+                justify-content: flex-start(默认) 左对齐<br>
+                justify-content: flex-end 右对齐<br>
+                *justify-content: center 居中对齐<br>
+                *justify-content: space-between 两端对齐<br>
+                justify-content: space-around 平均对齐<br>
+                justify-content: space-evenly 平均对齐<br> 
+               </p>
+                <select name="elementSlector" id="seljust">
+                    <option value="flex-start">flex-start(默认)</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                </select>
+               <div class="just" style="display: flex;
+               justify-content: flex-start;
+               height: 10vw;width: 50vw; border: 1px solid;">
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;">1</div>
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;">1</div>
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;">1</div>
+               
+            </div>
+               <li>侧轴对齐方式:单行</li>
+               <p>
+                align-items: flex-start(默认) 左对齐<br>
+                align-items: flex-end 右对齐<br>
+                align-items: center 居中对齐<br>
+                align-items: space-between 两端对齐<br>
+                align-items: space-around 平均对齐<br>
+                *align-items: space-evenly 平均对齐<br>
+                align-items: stretch 拉伸到父容器高<br>
+               </p>
+                <select name="elementSlector" id="selalign">
+                    <option value="flex-start">flex-start(默认)</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                    <option value="stretch">stretch</option>
+                    <option value="baseline">baseline</option>
+
+                </select>
+               <div class="align" style="display: flex;
+               align-items: flex-start ;flex-wrap:wrap;
+               justify-content: center;
+               height: 50vw;width: 50vw; border: 1px solid;">
+                <div class="flexbox" style="height: 18vw;width: 18vw;background: skyblue;">1</div>
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;font-size: 30px;">1</div>
+                <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+            </div>
+
+            <li>侧轴对齐方式:多行</li>
+            <p>
+                align-content: flex-start(默认) 左对齐<br>
+                align-content: flex-end 右对齐<br>
+                align-content: center 居中对齐<br>
+                align-content: space-between 两端对齐<br>
+                align-content: space-around flexitem之间的距离相等，且是边缘距离的2x。<br>
+                *align-content: space-evenly 平均对齐<br>
+                align-content: stretch 拉伸到父容器高<br>
+            </p>
+             <select name="elementSlector" id="selalignIt">
+                <option value="flex-start">flex-start(默认)</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+                <option value="stretch">stretch</option>
+                <option value="baseline">baseline</option>
+            </select>
+            <div class="align-it" style="display: flex;
+            flex-wrap:wrap;
+            /* align-content: flex-start; */
+            justify-content: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox" style="height: 18vw;width: 18vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;font-size: 30px;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             
+            </div>
+
+            <li>水平垂直居中</li>
+            <p>justify-content：center</p>
+            <p>align-items：center</p>
+            /<br>
+            <p>margin:auto</p>
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox" style="height: 18vw;width: 18vw;background: skyblue;">1</div>
+            </div>
+            <li>主轴基准长度</li>
+            <p>flex-basis: 100px;</p>
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div style="flex-basis: 100px;height: 18vw;width: 18vw;background: skyblue;">1</div>
+            </div>
+
+            <li>伸缩性</li>
+            <p>* flex-grow: 1;</p>
+            <button class="fbut">伸</button>:均分剩余空间/各得到剩余空间/盒子个数
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+            </div>
+            <li>压缩</li>
+            <p>* flex-shrink: 1;</p>
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+            </div>
+
+
+
+
+        </ol>
+
+        </fieldset>
+        <footer id="footer">
+        <a href="#section1">顶部锚点</a>
+    </footer>
+    </div>
+
+</body>    
+<script>
+    let just = document.querySelector(".just");
+    let sel = document.getElementById("seljust");
+    sel.addEventListener("change",()=>{
+        just.style.justifyContent = sel.value;
+    })
+
+    let align = document.querySelector(".align");
+    let selalign = document.getElementById("selalign");
+    selalign.addEventListener("change",()=>{
+        align.style.alignItems = selalign.value;
+    })
+
+    let alignIt = document.querySelector(".align-it");
+    let selalignIt = document.getElementById("selalignIt");
+    selalignIt.addEventListener("change",()=>{
+        alignIt.style.alignContent = selalignIt.value;
+    })
+
+    let fbut = document.querySelector(".fbut");
+    let t = document.querySelectorAll(".t1");
+        fbut.addEventListener("click",()=>{
+            t[0].style.flexGrow = "3";
+            t[1].style.flexGrow = "1.5";
+            t[2].style.flexGrow = "1";
+        })
+    // var canvas = document.getElementById('myCanvas');
+    // var ctx = canvas.getContext('2d');
+    // ctx.fillStyle = 'blue';
+    // ctx.fillRect(10, 10, 50, 50);
+    console.log(document.documentElement.clientHeight);
+    let body = document.getElementById("body");
+    let but = document.querySelector(".switch");
+    let nav = document.querySelector(".fixed-element");
+        but.addEventListener("click",()=>{
+            if(but.checked){
+                body.style.background = "rgb(0,0,0)";
+                body.style.color = 'gray'
+                but.style.backgroundColor = "rgb(0,0,0)";
+                but.transition = "1s";
+                nav.style.background = "gray";
+            }
+            else{
+                body.style.background = "linear-gradient(90deg, #a6e0f4 0%, #f9a4cf 100%)";
+                body.style.color = 'black'
+                but.style.backgroundColor = "rgb(255,255,255)";
+                but.transition = "1s";
+                nav.style.background = "linear-gradient(90deg, #a6e0f4 0%, #f9a4cf 100%)";
+            }
+        })
+</script>
+</html>

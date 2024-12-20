@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .divr{
+        border: solid 1px;
+        background-color: aqua;
+        width: 500px;
+        overflow: auto
+    }
+    .div1,.div2,.div3 {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        border: solid 1px;
+        margin: 5px;
+    }
+    .div1{
+        float: right;
+    }
+    .div11,.div22,.div33 {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        border: solid 1px;
+        margin: 5px;
+    }
+    .div11{
+        float: left;
+    }
+
+    .div111,.div222,.div333 {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        border: solid 1px;
+        margin: 5px;
+        float: left;
+    }
+
+    .div1111,.div2222,.div3333 {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        border: solid 1px;
+        margin: 5px;
+        float: left;
+    }
+    .div51,.div52,.div53 {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        border: solid 1px;
+        margin: 5px;
+        float: left;
+    }
+    .clearfix {
+          clear: both;
+        }
+</style>
+<body>
+    1.
+    <div class="divr">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+    </div>
+    2.
+    <div class="divr">
+        <div class="div11">1</div>
+        <div class="div22">2</div>
+        <div class="div33">3</div>
+    </div>
+    3.
+    <div class="divr">
+        <div class="div111">1</div>
+        <div class="div222">2</div>
+        <div class="div333">3</div>
+    </div>
+    4.
+    <div class="divr" style="width: 250px;">
+        <div class="div1111">1</div>
+        <div class="div2222">2</div>
+        <div class="div3333">3</div>
+    </div>
+    5.
+    <div class="divr" style="width: 250px;">
+        <div class="div51" style="height: 120px;">1</div>
+        <div class="div52">2</div>
+        <div class="div53">3</div>
+        
+    </div>
+    <!-- <div class="clearfix"></div> -->
+    <div style="background-color: blue;">
+        11111111111111111111111111111111111111111111111111111111111111
+        111111111111111111111111111111111111111111111111111111111111111
+    </div>
+    
+</body>
+</html>
