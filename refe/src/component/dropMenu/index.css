@@ -5,12 +5,13 @@
     position: absolute;
     height: 0px;
     width: 100px;
-    background: whitesmoke;
+    background: rgba(203, 225, 241, 0.858);
     overflow: hidden;
     border-radius: 5px;
     top: 3.8vh;
     transition: all 0.2s ease-in-out;
     font-size: 16px;
+    backdrop-filter: blur(10px);
     /* padding: 5px; */
     a{
         color: black;

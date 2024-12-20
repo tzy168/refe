@@ -3,16 +3,16 @@ import {
   Type,
   Skillcard,
   Timer,
-  Firstshow,
+  FirstShow,
   Menu
 } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
 function App() {
-  const content1 = 'This is Welcome Here! ';
+  const content1 = 'Welcome Here! ';
   const content2 = 'This is personal Web :) ';
   const content3 = 'This is a web developer.';
-  const content4 = 'This is Hello World! :) ';
+  const content4 = 'Hello World! :) ';
   const content5 = 'This is REFE :)';
   const content = [content1, content2, content3, content4, content5];
 
@@ -27,21 +27,19 @@ function App() {
   return (
     <div className="App">
       <header>
-        <span><strong>@REFE</strong></span>
+        <strong style={{ fontSize: '20px' }}>@REFE</strong>
         <div className='head-navbar'>
-
-          {/* <span onClick={() => navigate(`/hc`)}>Html&Css</span> */}
           <span onClick={() => navigate(`/resume`)}>Resume</span>
           <span>Photo</span>
           <span onClick={() => navigate(`/myelement`)}>MyElement</span>
           <span><Menu title={'Skill'} /></span>
         </div>
-        <div className='bar-btn'>
-          {show ? <i className='bar' onClick={() => handleClick()}>&#xe621;</i>
+        <p className='bar-btn'>
+          {show ? <b className='bar' onClick={() => handleClick()}>&#xe621;</b>
             :
-            <i className='bar' onClick={() => handleClick()}>&#xe666;</i>
+            <b className='bar' onClick={() => handleClick()}>&#xe666;</b>
           }
-        </div>
+        </p>
 
       </header >
       <div className='side-navbar'>
@@ -54,9 +52,9 @@ function App() {
       <div className='container'>
         <Timer />
         <Type content={content} />
-        <Firstshow />
+        <FirstShow />
         <div className='skill-box'>
-          <Skillcard />
+          {/* <Skillcard /> */}
         </div>
       </div>
     </div >
