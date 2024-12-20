@@ -7,9 +7,6 @@ const Firstshow = () => {
             <h1 className='item item3'>Hello World!</h1>
             <h1 className='item item4'>Hello World!</h1>
             <h1 className='item item5'>Hello World!</h1>
-            {/* <div className='box'></div>
-            <div className='box'></div>
-            <div className='box'></div> */}
         </div >
     )
 }

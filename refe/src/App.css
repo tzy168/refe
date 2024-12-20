@@ -7,6 +7,9 @@ body {
   /* background-color: rgb(3, 97, 134); */
   overflow-x: hidden;
 }
+/* div{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+} */
 
 /* 自定义字体 */
 @font-face {
@@ -118,7 +121,7 @@ header span:hover {
   font-family: "iconfont"!important;
   transition: all 0.3s ease-in-out;
   margin: 5px;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   font-size: 18px;
   padding: 2px;
   border-radius: 4px;

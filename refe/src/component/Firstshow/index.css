@@ -1,16 +1,13 @@
 .main-show{
     line-height: 0.1;
     margin-bottom: 10px;
-    /* align-self: flex-start; */
     height: 80vh;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
     /* border: 1px solid rgba(0, 0, 255, 0.2); */
-    padding: 60px;
+    /* padding: 60px; */
+    /* width: 100%; */
 }
-/* .main-show:hover{
-    line-height: 0.8;
-} */
 .item{
     font-size: 8rem;
     font-weight: bold;
@@ -40,14 +37,19 @@
     color: rgba(0, 0, 255, 0.8);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px)
+{
     .item{
-    font-size: 5rem;
+        font-size: 4rem;
+        line-height: 0.2;
     }
 }
-.box{
-    width: 100px;
-    height: 200px;
-    background-color: rgba(240, 255, 249, 0.217);
-    position: absolute;
+
+@media screen and (max-width: 768px) {
+    .item{
+        font-size: 1.9rem;
+        line-height: 0.2;
+    }
 }
+
+
