@@ -1,0 +1,39 @@
+.menu-list{
+    position: relative;
+}
+.detail{
+    position: absolute;
+    height: 0px;
+    width: 100px;
+    background: rgb(228, 232, 235);
+    border-radius: 5px;
+    top: 120%;
+    transition: all 0.2s ease-in-out;
+    font-size: 16px;
+    overflow-y: auto;
+    a{
+        color: black;
+        padding-left: 5px;
+    }
+}
+
+a:hover{
+    text-decoration: underline;
+}
+.tangle{
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color: rgba(215, 221, 224, 0.858);
+    top: 70%;
+    left: 20%;
+    opacity:0;
+}
+
+.menu-list:hover{
+    .detail{
+        height: auto
+   }
+   .tangle{
+        opacity:1;
+  }
+}
