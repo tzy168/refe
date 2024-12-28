@@ -4,7 +4,7 @@ import Skillcard from './skillbox'
 import Range from './Range'
 import Timer from './timer'
 import FirstShow from './Firstshow'
-import Menu from './dropMenu'
+import Menu from './dropUrlMenu'
 
 export {
     BtnChange,

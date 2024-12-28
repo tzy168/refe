@@ -24,6 +24,23 @@ function App() {
     setShow(!show)
   }
 
+  const menuList = [
+    {
+      id: 1,
+      name: 'webPack',
+      url: 'https://kun-blog.github.io/webpack5-docs/'
+    },
+    {
+      id: 2,
+      name: '面试题',
+      url: 'https://2xiao.github.io/'
+    },
+    {
+      id: 3,
+      name: 'myReact',
+      url: 'https://pomb.us/build-your-own-react/'
+    }
+  ]
   return (
     <div className="App">
       <header>
@@ -32,7 +49,8 @@ function App() {
           <span onClick={() => navigate(`/resume`)}>Resume</span>
           <span>Photo</span>
           <span onClick={() => navigate(`/myelement`)}>MyElement</span>
-          <span><Menu title={'Skill'} /></span>
+          <span><Menu title={'Learn'} list={menuList} /></span>
+          <span><Menu title={'base'} /></span>
         </div>
         <p className='bar-btn'>
           {show ? <b className='bar' onClick={() => handleClick()}>&#xe621;</b>
@@ -46,6 +64,7 @@ function App() {
         {/* <span onClick={() => navigate(`/hc`)}>Html&Css</span> */}
         <span onClick={() => navigate(`/resume`)}>Resume</span>
         <span>学习路线图</span>
+        <span><Menu title={'Learn'} list={menuList} /></span>
         <span>Photo</span>
         <span onClick={() => navigate(`/myelement`)}>MyElement</span>
       </div>
