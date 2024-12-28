@@ -4,6 +4,7 @@
 }
 .detail{
     position: absolute;
+    background-color: white;
     /* padding: 5px; */
     width: 100px;
     border-radius: 5px;
