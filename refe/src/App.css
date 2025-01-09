@@ -29,13 +29,15 @@ body {
   justify-content: flex-start;
   align-items: center;
   width: 100vw;
+  background:url(../public/bg.png);
+  background-size: cover;
 }
 
 /* Header 样式 */
 header {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.813);
+  background-color: rgba(206, 202, 202, 0.235);
   /* border: 1px solid #ccc; */
   height: 6vh;
   border-bottom-left-radius: 5px;

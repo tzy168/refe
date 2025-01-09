@@ -5,27 +5,29 @@
 .detail{
     position: absolute;
     background-color: white;
-    /* padding: 5px; */
+    max-height: 150px;
     width: 100px;
     border-radius: 5px;
     top: 100%;
     transition: all 0.2s ease-in-out;
     font-size: 16px;
-    overflow-y: auto;
+    overflow-y: scroll;
     box-shadow: 3px 3px 5px rgb(199, 195, 195);
     display: none;
     border-radius: 5px;
     a{
+
         display: block;
         height: 25px;
         color: black;
         padding-left: 5px;
+        margin: 2px;
         transition: all 0.1s ease-in-out;
+        border-radius: 4px;
     }
 }
 
 a:hover{
-    /* text-decoration: underline; */
     background-color: rgb(212, 216, 220);
 }
 .menu-list:hover{

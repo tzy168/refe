@@ -39,6 +39,11 @@ function App() {
       id: 3,
       name: 'myReact',
       url: 'https://pomb.us/build-your-own-react/'
+    },
+    {
+      id: 3,
+      name: 'myReact',
+      url: 'https://pomb.us/build-your-own-react/'
     }
   ]
   return (
