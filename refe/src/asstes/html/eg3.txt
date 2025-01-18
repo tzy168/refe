@@ -1,0 +1,9 @@
+    :root {
+       --primary-color: blue;
+       --font-size: 16px;
+     }
+     
+        .element {
+       color: var(--primary-color);
+       font-size: var(--font-size);
+     }

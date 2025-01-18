@@ -1,0 +1,16 @@
+浏览器会将 HTML 中的换行符、空格等空白字符解析为一定的空间，从而导致出现这些看似 “幽灵” 的空白
+            <div>
+                <div class="inline-block-element"></div>
+                <div class="inline-block-element"></div>
+            </div>
+
+            将多个行内块元素写在同一行，不使用换行符和多余的空格
+            <div>
+                <div class="inline-block-element"></div><div class="inline-block-element"></div>
+            </div>
+
+            如果行内块元素在一个父元素中，可以将父元素的字体大小设置为 0，然后再为行内块元素单独设置字体大小
+                <div  style="font-size: 0px;">
+                <div class="inline-block-element" style="font-size: 16px;"></div>
+                <div class="inline-block-element" style="font-size: 16px;"></div>
+            </div>

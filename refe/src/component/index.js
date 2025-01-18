@@ -5,13 +5,15 @@ import Range from './Range'
 import Timer from './timer'
 import FirstShow from './Firstshow'
 import Menu from './dropUrlMenu'
+import MarkdownViewer from './MDViewer'
 
 export {
-    BtnChange,
-    Type,
-    Timer,
-    FirstShow,
-    Skillcard,
-    Range,
-    Menu
+  BtnChange,
+  Type,
+  Timer,
+  FirstShow,
+  Skillcard,
+  Range,
+  Menu,
+  MarkdownViewer
 }

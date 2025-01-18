@@ -1,0 +1,8 @@
+.context {
+  border: 1px solid #000;
+  width: 600px;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}

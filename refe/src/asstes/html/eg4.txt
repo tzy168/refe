@@ -1,0 +1,9 @@
+<span style="background-color: #FF0000;">Element 1</span>
+<span style="background-color: blue;">Element 2</span><br>
+
+<span style="background-color: #FF0000;">Element 1</span><span style="background-color: blue;">Element 2</span>
+当多个行内元素（如<span>、<a>等）连续排列时，它们之间可能会出现一些空白。
+这是因为在 HTML 代码中，元素之间的换行符、空格等空白字符会被浏览器解析并显示为一定的空间。
+
+1.删除元素之间的空白字符：
+    在 HTML 代码中，可以将多个行内元素写在同一行，不使用换行符和多余的空格，以消除元素之间的空白。

@@ -1,0 +1,12 @@
+.md-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(8, 248, 248, 0.712);
+  line-height: 26px;
+  margin: 10px auto;
+  width: 50%;
+}
+h1 {
+  margin: 10px;
+}

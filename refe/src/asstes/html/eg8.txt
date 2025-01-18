@@ -1,0 +1,14 @@
+<li>基本用法</li>
+            <code>'a[href="URL_ADDRESS"] {
+                    color: blue;
+                  }'</code>
+             
+            <p>属性选择器由选择器和方括号（[]）组成。例如，选择href属性值为URL_ADDRESS的a元素。</p>
+            <li>组合使用</li>
+            <code>
+                 input[type="text"] {
+                    border: 1px solid #ccc;
+                  }
+            </code>
+            
+            <p>属性选择器可以与其他选择器组合使用，例如选择type属性值为text的input元素。</p>

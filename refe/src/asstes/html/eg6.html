@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+         border: 1px solid black;
+         /* overflow: auto; */
+       }
+
+    .float-element {
+         float:right;
+         width: 100px;
+         height: 100px;
+         background-color: lightblue;
+       }
+       .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+    </style>
+<body>
+    <p>在这个例子中，父元素.parent的边框将不会包围浮动元素，因为父元素的高度没有被浮动元素撑开。</p>
+    <div class="parent">
+        <span class="float-element"></span>
+      </div>
+      <p>清除浮动的方法：<br>
+        使用clear属性：可以在一个元素上设置clear: both;来清除左右两侧的浮动。<br>
+        通常可以在父元素的最后添加一个空的<div>元素，并设置这个元素的clear属性。</p><br>
+            <div class="parent clearfix">
+                <span class="float-element"></span>
+                <span class="float-element"></span>
+              </div>
+              <code>
+                .parent {
+                    border: 1px solid black;
+                    overflow: auto;//
+                  }
+           <br>
+               .float-element {
+                    float:right;
+                    width: 100px;
+                    height: 100px;
+                    background-color: lightblue;
+                  }
+                  <br>
+                  .clearfix::after {
+                       content: "";
+                       display: table;
+                       clear: both;
+                     }
+              </code>
+</body>
+</html>

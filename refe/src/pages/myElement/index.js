@@ -1,10 +1,12 @@
 import React from 'react';
-const Myelement = () => {
-    return (
-        <div>
-            <h1>MyElement Pages</h1>
-        </div >
-    )
-}
+import { MarkdownViewer } from '../../component/index';
 
-export default Myelement
+const Myelement = () => {
+  return (
+    <div>
+      <MarkdownViewer md={'场景题.md'} />
+    </div>
+  );
+};
+
+export default Myelement;
