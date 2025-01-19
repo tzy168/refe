@@ -8,21 +8,26 @@
     "cra-template": "1.2.0",
     "echarts": "^5.5.1",
     "highlight.js": "^11.11.1",
+    "jsonserver": "^0.1.6",
+    "quill": "^2.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.3",
+    "react-quill": "^2.0.0",
     "react-router": "^7.0.2",
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
     "refe": "file:",
     "rehype-highlight": "^7.0.1",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "uuid": "^11.0.5"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "concurrently \"react-scripts start\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server --watch ./db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +49,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
+    "concurrently": "^9.1.2",
     "raw-loader": "^4.0.2",
     "react-app-rewired": "^2.2.1"
   }

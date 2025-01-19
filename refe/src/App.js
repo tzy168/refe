@@ -8,7 +8,7 @@ import {
 } from './component/index'
 import './App.css';
 import { useNavigate } from 'react-router';
-function App() {
+function App () {
   const content1 = 'Welcome Here! ';
   const content2 = 'This is personal Web :) ';
   const content3 = 'This is a web developer.';
@@ -39,13 +39,9 @@ function App() {
       id: 3,
       name: 'myReact',
       url: 'https://pomb.us/build-your-own-react/'
-    },
-    {
-      id: 3,
-      name: 'myReact',
-      url: 'https://pomb.us/build-your-own-react/'
     }
   ]
+
   return (
     <div className="App">
       <header>
@@ -55,7 +51,7 @@ function App() {
           <span>Photo</span>
           <span onClick={() => navigate(`/myelement`)}>MyElement</span>
           <span><Menu title={'Learn'} list={menuList} /></span>
-          <span><Menu title={'base'} /></span>
+          <span onClick={() => navigate(`/note`)}><Menu title={'Note'} /></span>
         </div>
         <p className='bar-btn'>
           {show ? <b className='bar' onClick={() => handleClick()}>&#xe621;</b>
@@ -68,8 +64,8 @@ function App() {
       <div className='side-navbar'>
         {/* <span onClick={() => navigate(`/hc`)}>Html&Css</span> */}
         <span onClick={() => navigate(`/resume`)}>Resume</span>
-        <span>学习路线图</span>
         <span><Menu title={'Learn'} list={menuList} /></span>
+        <span><Menu title={'Note'} /></span>
         <span>Photo</span>
         <span onClick={() => navigate(`/myelement`)}>MyElement</span>
       </div>
@@ -77,9 +73,6 @@ function App() {
         <Timer />
         <Type content={content} />
         <FirstShow />
-        <div className='skill-box'>
-          {/* <Skillcard /> */}
-        </div>
       </div>
     </div >
   );

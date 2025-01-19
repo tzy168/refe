@@ -1,0 +1,25 @@
+.note-main {
+  display: flex;
+}
+
+.md-container {
+  display: inline-block;
+  margin-left: 21.2%;
+  width: 60%;
+}
+
+h3 {
+  cursor: pointer;
+}
+
+.note-btn {
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+li {
+  cursor: pointer;
+}

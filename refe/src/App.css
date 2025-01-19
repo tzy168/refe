@@ -14,10 +14,13 @@ body {
 
 /* 自定义字体 */
 @font-face {
-  font-family: 'iconfont'; /* Project id 4742292 */
-  src: url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff2?t=1733543192760') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff?t=1733543192760') format('woff'),
-       url('//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.ttf?t=1733543192760') format('truetype');
+  font-family: "iconfont"; /* Project id 4742292 */
+  src: url("//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff2?t=1733543192760")
+      format("woff2"),
+    url("//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.woff?t=1733543192760")
+      format("woff"),
+    url("//at.alicdn.com/t/c/font_4742292_eenkc8vgg3.ttf?t=1733543192760")
+      format("truetype");
 }
 
 /* App 主体样式 */
@@ -29,7 +32,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   width: 100vw;
-  background:url(../public/bg.png);
+  background: url(../public/bg.png);
   background-size: cover;
 }
 
@@ -51,23 +54,22 @@ header {
   backdrop-filter: blur(10px);
   align-items: baseline;
   padding-top: 10px;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 .head-navbar {
   display: flex;
   flex: 15;
   flex-direction: row;
-  /* align-items: flex-end; */
-  /* justify-content: flex-start; */
 }
-header span,.side-navbar span {
+header span,
+.side-navbar span {
   display: block;
   margin-left: 12px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   color: rgba(48, 46, 46, 0.758);
   font-size: 1.4rem;
   cursor: pointer;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.2s ease-in-out;
   border-radius: 5px;
   width: auto;
@@ -116,7 +118,8 @@ header span:hover {
   transition: all 0.2s ease-in-out;
   z-index: 999;
   backdrop-filter: blur(10px);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .side-navbar-active {
   opacity: 1;
@@ -125,7 +128,7 @@ header span:hover {
 
 /* 图标字体样式 */
 .bar {
-  font-family: "iconfont"!important;
+  font-family: "iconfont" !important;
   transition: all 0.3s ease-in-out;
   margin: 5px;
   color: rgb(0, 0, 0);
@@ -153,7 +156,7 @@ header span:hover {
   }
 }
 
-.now-date{
+.now-date {
   text-align: left;
   align-self: flex-start;
   margin-left: 10px;

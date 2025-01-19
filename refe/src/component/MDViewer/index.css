@@ -1,11 +1,11 @@
 .md-box {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 15px;
-  border-radius: 10px;
-  background-color: rgba(8, 248, 248, 0.712);
+  /* border-radius: 10px; */
+  /* background-color: rgba(84, 239, 84, 0.598); */
+  margin: 10px;
   line-height: 26px;
-  margin: 10px auto;
-  width: 50%;
+  width: 100%;
 }
 h1 {
   margin: 10px;

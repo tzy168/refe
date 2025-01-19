@@ -1,0 +1,8 @@
+.note-card {
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  /* 每次随机生成背景色 */
+  background-color: rgb(196, 239, 239);
+}

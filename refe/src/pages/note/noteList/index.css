@@ -1,0 +1,33 @@
+.listShow {
+  display: none;
+  margin-left: 47%;
+}
+.side-Bar {
+  /* display: inline-block; */
+  width: 20%;
+  padding: 5px;
+  height: 100vh;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  top: 10px;
+}
+.side-item {
+  display: block;
+  margin-left: -20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1000px) {
+  .side-Bar {
+    transform: translateX(-100%);
+  }
+  .listShow {
+    display: inline-block;
+  }
+}
+.show {
+  transform: translateX(0);
+}

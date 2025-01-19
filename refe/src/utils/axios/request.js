@@ -1,14 +1,12 @@
 import axios from "axios";
 
 const http = axios.create({
-    baseURL: 'https://picui.cn/api/v1',
-    timeout: 5000,
+  baseURL: 'http://localhost:3001',
+  timeout: 5000,
 })
 http.interceptors.request.use(config => {
-    config.headers.Authorization = `Bearer 580|qROZy7DDalP8faQo5eL0XRbhrtBCXGspw84hxavJ`
-    config.headers.Accept = 'application/json'
-    return config
+  return config
 }, error => {
-    return Promise.reject(error)
+  return Promise.reject(error)
 })
 export default http

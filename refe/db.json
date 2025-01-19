@@ -1,0 +1,24 @@
+{
+  "noteInfo": [
+    {
+      "id": "74dfd717-fd80-4487-a158-625887ffc36a",
+      "title": "js 超出 Number 最大值怎么办？",
+      "content": "<ol><li>BigInt</li><li>decimal.js</li><li>格式化好读的形式：100000000 = 1 亿</li><li>表单校验，限制用户输入的长度或大小</li></ol>"
+    },
+    {
+      "id": "af93f25d-561e-4a61-8120-ffe030e7317e",
+      "title": "如何解决页面请求接口大规模并发？",
+      "content": "<ol><li>滑动窗口算法，专门用来控制流量</li><li>背景：数据采集，低代码，有序相对稳定发送后端</li><li>自己封装请求队列 queue = [ ]</li><li>分页、滚动加载 <strong style=\"color: rgb(213, 39, 83);\">**可视区域绘制**</strong></li><li>防抖节流 <strong style=\"color: rgb(213, 39, 83);\">**lodash**</strong></li></ol><ul><li>最后一次触发，延迟执行</li><li>一段时间内，只执行一次</li></ul><p><br></p>"
+    },
+    {
+      "id": "91c26d0d-940f-4d1e-bca9-c931b589aba8",
+      "title": "说说大文件上传？",
+      "content": "<h3>背景</h3><ol><li>网络断开，之前的没了</li><li>传着传着网络波动，结果都没了</li><li>关机了，想接着传，做不到</li></ol><h3>方案</h3><ol><li>前端切片，chunk，1024M(1048576K),500k,const size = 1048576/100</li><li>将切片传给后端，取名：hash,有index</li><li>后端组合切片</li></ol><h3>加料</h3><ol><li>切片卡顿，主进程卡顿，web-worker，多线程切片，处理完后交给主进程发送</li><li>切完后，将blob，存储到IndexDB，下一次用户进来之后，嗅探一下是否存在未上传完的切片，有就尝试上传；</li><li>整体大文件上传器整体设计</li></ol><ul><li>组件设计</li><li>props、事件、状态</li><li>拖拽上传、多文件选择</li><li>通用化不同文件上传 </li></ul>"
+    },
+    {
+      "id": "12803007-38bb-4a9c-8a24-d2968ec7c0c6",
+      "title": "前端如何页面截图？",
+      "content": "<h3>背景</h3><ul><li>飞书文档，内容在列表页想要查看</li><li>内容导出png</li><li>设计类软件，出图</li></ul><h3>方案</h3><p>截图：</p><ol><li>canvas</li><li>puppeteer（无头浏览器）、无头表格、无头UI</li><li><strong>html2canvas（原理canvas）</strong></li></ol><p>上传CDN</p><p><em>全页面截图</em></p><p><em>局部截图</em></p><p><em>特定区域截图</em></p><h3>落地</h3><ul><li>考虑通用性，拿对应区域DOM</li><li>函数组件，隐藏canvas</li><li>代码编写</li></ul>"
+    }
+  ]
+}
